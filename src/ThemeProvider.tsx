@@ -25,6 +25,12 @@ export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
 					secondary: {
 						main: '#EBD265',
 					},
+					background: {
+						default: '#820000',
+					},
+					text: {
+						primary: '#FFF',
+					},
 			  },
 	}
 

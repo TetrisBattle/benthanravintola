@@ -12,7 +12,13 @@ export const Header = () => {
 	]
 
 	return (
-		<AppBar>
+		<AppBar
+			sx={{
+				boxShadow: 0,
+				borderBottom: (theme) =>
+					`3px solid ${theme.palette.secondary.main}`,
+			}}
+		>
 			<Toolbar sx={{ height: 64, px: 1 }}>
 				<Box
 					sx={{

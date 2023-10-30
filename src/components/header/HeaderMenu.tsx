@@ -25,7 +25,17 @@ export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
 				<MenuIcon />
 			</IconButton>
 
-			<Drawer anchor='right' open={!!open} onClose={toggleOpen}>
+			<Drawer
+				anchor='right'
+				open={!!open}
+				onClose={toggleOpen}
+				sx={{
+					'& .MuiDrawer-paper': {
+						bgcolor: (theme) => theme.palette.primary.main,
+						color: (theme) => theme.palette.primary.contrastText,
+					},
+				}}
+			>
 				{routes.map((route) => (
 					<MenuItem
 						key={'headerMenuItem-' + route}
@@ -34,7 +44,7 @@ export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
 						onClick={toggleOpen}
 						sx={{
 							'&.active': (theme) => ({
-								color: theme.palette.primary.main,
+								color: theme.palette.secondary.main,
 							}),
 						}}
 					>
