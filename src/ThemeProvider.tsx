@@ -16,15 +16,15 @@ export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
 		palette: isDarkMode
 			? {
 					mode: 'dark',
-					primary: {
-						main: '#BB85FC',
-					},
-					secondary: {
-						main: '#10DAC6',
-					},
 			  }
 			: {
 					mode: 'light',
+					primary: {
+						main: '#820000',
+					},
+					secondary: {
+						main: '#EBD265',
+					},
 			  },
 	}
 
