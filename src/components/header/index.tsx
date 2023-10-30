@@ -1,28 +1,24 @@
-import { AppBar, Box, Toolbar, Typography } from '@thng/react'
+import { AppBar, Box, Toolbar } from '@thng/react'
 import { RouteOption } from 'App/Routes'
 import { HeaderButton } from './HeaderButton'
 import { HeaderMenu } from './HeaderMenu'
 
 export const Header = () => {
-	const headerRoutes = [RouteOption.Home, RouteOption.About]
+	const headerRoutes = [
+		RouteOption.Etusivu,
+		RouteOption.Menu,
+		RouteOption.Kuvagalleria,
+		RouteOption.Yhteystiedot,
+	]
 
 	return (
 		<AppBar>
 			<Toolbar sx={{ height: 64, px: 1 }}>
-				<Typography
-					variant='h1'
-					sx={{
-						pl: 1,
-						fontSize: 32,
-					}}
-				>
-					ClientApp
-				</Typography>
 				<Box
 					sx={{
 						width: 1,
 						display: 'flex',
-						justifyContent: 'flex-end',
+						justifyContent: 'center',
 					}}
 				>
 					<Box
@@ -42,8 +38,8 @@ export const Header = () => {
 							/>
 						))}
 					</Box>
-					<HeaderMenu routes={headerRoutes} />
 				</Box>
+				<HeaderMenu routes={headerRoutes} />
 			</Toolbar>
 		</AppBar>
 	)

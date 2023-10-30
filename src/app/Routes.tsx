@@ -1,13 +1,17 @@
 import { Root } from 'App/Root'
-import { About } from 'features/About'
-import { Home } from 'features/Home'
+import { Etusivu } from 'features/Etusivu'
+import { Menu } from 'features/Menu'
+import { Kuvagalleria } from 'features/Kuvagalleria'
+import { Yhteystiedot } from 'features/Yhteystiedot'
 import { NotFound } from 'features/NotFound'
 import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom'
 
 export enum RouteOption {
 	NotFound = '/404',
-	Home = '/home',
-	About = '/about',
+	Etusivu = '/etusivu',
+	Menu = '/menu',
+	Kuvagalleria = '/kuvagalleria',
+	Yhteystiedot = '/yhteystiedot',
 }
 
 const routes: RouteObject[] = [
@@ -20,9 +24,14 @@ const routes: RouteObject[] = [
 				path: '*',
 				element: <Navigate replace to={RouteOption.NotFound} />,
 			},
-			{ path: '/', element: <Navigate replace to={RouteOption.Home} /> },
-			{ path: RouteOption.Home, element: <Home /> },
-			{ path: RouteOption.About, element: <About /> },
+			{
+				path: '/',
+				element: <Navigate replace to={RouteOption.Etusivu} />,
+			},
+			{ path: RouteOption.Etusivu, element: <Etusivu /> },
+			{ path: RouteOption.Menu, element: <Menu /> },
+			{ path: RouteOption.Kuvagalleria, element: <Kuvagalleria /> },
+			{ path: RouteOption.Yhteystiedot, element: <Yhteystiedot /> },
 		],
 	},
 ]

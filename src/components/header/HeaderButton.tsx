@@ -14,10 +14,10 @@ export const HeaderButton = ({ route }: HeaderButtonProps) => {
 			variant='text'
 			sx={(theme) => ({
 				fontSize: '1.25rem',
-				fontWeight: (theme) => theme.typography.fontWeightRegular,
+				fontWeight: (theme) => theme.typography.fontWeightMedium,
 				color: 'inherit',
-				'&.active': theme.palette.mode === 'dark' && {
-					color: theme.palette.primary.main,
+				'&.active': {
+					color: theme.palette.secondary.main,
 				},
 			})}
 		>

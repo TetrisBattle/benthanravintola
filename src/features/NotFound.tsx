@@ -14,9 +14,9 @@ export const NotFound = () => {
 				mt: 3,
 			}}
 		>
-			<Typography variant='h1'>Not Found!</Typography>
-			<Button component={Link} to={RouteOption.Home}>
-				Return to home page
+			<Typography variant='h1'>Sivua ei löytynyt!</Typography>
+			<Button component={Link} to={RouteOption.Etusivu}>
+				Palaa etusivulle
 			</Button>
 		</Box>
 	)
