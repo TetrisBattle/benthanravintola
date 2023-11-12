@@ -1,29 +1,31 @@
 import { Menu as MenuIcon } from '@mui/icons-material'
-import { Drawer, IconButton, MenuItem } from '@thng/react'
+import { Drawer, IconButton, MenuItem, Toolbar, Typography } from '@thng/react'
 import { RouteOption, routeToTitle } from 'App/Routes'
+import { useTitle } from 'hooks/useTitle'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-type HeaderMenuProps = {
-	routes: RouteOption[]
-}
-
-export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
+export const MobileHeader = ({ routes }: { routes: RouteOption[] }) => {
 	const [open, setOpen] = useState(false)
-
 	const toggleOpen = () => setOpen((prev) => !prev)
 
 	return (
 		<>
-			<IconButton
-				onClick={toggleOpen}
+			<Toolbar
 				sx={{
-					color: 'inherit',
-					display: { sm: 'none' },
+					height: 64,
+					px: 1,
+					display: 'flex',
+					justifyContent: 'space-between',
 				}}
 			>
-				<MenuIcon />
-			</IconButton>
+				<Typography component='h1' variant='h2'>
+					{useTitle()}
+				</Typography>
+				<IconButton onClick={toggleOpen} sx={{ color: 'inherit' }}>
+					<MenuIcon />
+				</IconButton>
+			</Toolbar>
 
 			<Drawer
 				anchor='right'
@@ -38,7 +40,7 @@ export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
 			>
 				{routes.map((route) => (
 					<MenuItem
-						key={'headerMenuItem-' + route}
+						key={route}
 						component={NavLink}
 						to={route}
 						onClick={toggleOpen}

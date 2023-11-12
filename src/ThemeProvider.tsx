@@ -12,6 +12,9 @@ export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
 		appStore: { isDarkMode },
 	} = useStore()
 
+	const red = '#820000'
+	const yellow = '#EBD265'
+
 	const theme: ThemeOptions = {
 		palette: isDarkMode
 			? {
@@ -20,16 +23,17 @@ export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
 			: {
 					mode: 'light',
 					primary: {
-						main: '#820000',
+						main: red,
+						contrastText: yellow,
 					},
 					secondary: {
-						main: '#EBD265',
+						main: yellow,
 					},
 					background: {
-						default: '#820000',
+						default: red,
 					},
 					text: {
-						primary: '#FFF',
+						primary: yellow,
 					},
 			  },
 	}
