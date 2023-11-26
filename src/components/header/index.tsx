@@ -22,7 +22,7 @@ export const Header = observer(() => {
 			sx={{
 				boxShadow: 0,
 				borderBottom: (theme) =>
-					`3px solid ${theme.palette.secondary.main}`,
+					`1px solid ${theme.palette.secondary.main}`,
 			}}
 		>
 			{isMobile ? (

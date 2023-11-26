@@ -7,6 +7,7 @@ import { NotFound } from 'features/NotFound'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 
 export enum RouteOption {
+	Root = '/',
 	NotFound = '/404',
 	Etusivu = '/etusivu',
 	Menu = '/menu',
@@ -37,5 +38,6 @@ export const router = createBrowserRouter([
 ])
 
 export const routeToTitle = (route: RouteOption): string => {
+	if (route === RouteOption.Root) return ''
 	return route[1].toUpperCase() + route.slice(2)
 }

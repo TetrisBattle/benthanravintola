@@ -19,7 +19,14 @@ export const MobileHeader = ({ routes }: { routes: RouteOption[] }) => {
 					justifyContent: 'space-between',
 				}}
 			>
-				<Typography component='h1' variant='h2'>
+				<Typography
+					component='h1'
+					variant='h2'
+					sx={{
+						fontWeight: (theme) =>
+							theme.typography.fontWeightRegular,
+					}}
+				>
 					{useTitle()}
 				</Typography>
 				<IconButton onClick={toggleOpen} sx={{ color: 'inherit' }}>
