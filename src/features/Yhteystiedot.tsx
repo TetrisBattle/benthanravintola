@@ -23,7 +23,7 @@ export const Yhteystiedot = () => {
 			<Box>
 				<Typography>ma - pe&ensp;10:30 - 18:00</Typography>
 				<Typography>
-					la&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;11:00 - 20:00
+					la&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;12:00 - 18:00
 				</Typography>
 				<Typography>
 					su &ensp;&ensp;&ensp;&ensp;&ensp;Suljettu
