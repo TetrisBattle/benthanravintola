@@ -13,6 +13,7 @@ const MenuItem = forwardRef(
 		return (
 			<Box
 				ref={ref}
+				component='li'
 				sx={{
 					display: 'flex',
 					justifyContent: 'space-between',
@@ -46,7 +47,7 @@ export const MenuItems = forwardRef(
 		ref: React.ForwardedRef<HTMLDivElement>
 	) => {
 		return (
-			<Stack ref={ref} gap={0.5} sx={{ p: 1 }}>
+			<Stack component='section' ref={ref} gap={0.5} sx={{ p: 1 }}>
 				<Typography
 					variant='h2'
 					sx={{
@@ -57,9 +58,11 @@ export const MenuItems = forwardRef(
 				>
 					{label}
 				</Typography>
-				{items.map((item) => (
-					<MenuItem key={item.name} item={item} />
-				))}
+				<Box component='ul' sx={{ m: 0, p: 0 }}>
+					{items.map((item) => (
+						<MenuItem key={item.name} item={item} />
+					))}
+				</Box>
 			</Stack>
 		)
 	}

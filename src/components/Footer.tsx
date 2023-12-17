@@ -7,6 +7,7 @@ export const Footer = () => {
 		<Box
 			component='footer'
 			sx={{
+				height: 64,
 				mt: 'auto',
 				display: 'flex',
 				justifyContent: 'center',

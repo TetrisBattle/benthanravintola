@@ -1,53 +1,65 @@
-import { Box, Tab, Tabs } from '@thng/react'
+import { Box, Button, Toolbar, useTheme } from '@thng/react'
 import { useEffect, useRef, useState } from 'react'
 import { menus } from './data'
 import { MenuItems } from './MenuItems'
 
 export const Menu = () => {
-	const [selectedTab, setSelectedTab] = useState(0)
-	const menuRef = useRef<HTMLDivElement>(null)
+	const [sectionId, setSectionId] = useState(0)
+	const sectionRef = useRef<HTMLDivElement>(null)
 	const [scroll, setScroll] = useState(false)
 
 	useEffect(() => {
 		if (scroll) {
-			menuRef.current?.scrollIntoView()
+			sectionRef.current?.scrollIntoView()
 			setScroll(false)
 		}
 	}, [scroll])
 
 	return (
 		<Box id='Menu'>
-			<Tabs
-				value={selectedTab}
-				onChange={(_e, tab: number) => {
-					setSelectedTab(tab)
-				}}
-				onClick={() => {
-					setScroll(true)
-				}}
-				onAnimationEnd={() => {
-					menuRef.current?.scrollIntoView()
-				}}
-				textColor='secondary'
-				indicatorColor='secondary'
-				variant='scrollable'
-				scrollButtons='auto'
+			<Toolbar
 				sx={{
-					position: 'sticky',
-					top: 65, // Header height
-					bgcolor: (theme) => theme.palette.primary.main,
-					width: 1,
-					borderBottom: `1px solid`,
-					button: { color: (theme) => theme.palette.secondary.main },
+					height: 48,
+					overflow: 'auto',
+					scrollbarWidth: 'none',
+					'::-webkit-scrollbar': {
+						display: 'none',
+					},
+					boxShadow: (theme) => [
+						`0px 1px 2px 0px ${theme.palette.secondary.main}`,
+					],
 				}}
 			>
-				{menus.map((menu) => {
-					return <Tab key={menu.label} label={menu.label} />
+				{menus.map((menu, index) => {
+					return (
+						<Button
+							key={menu.label}
+							variant='text'
+							color='secondary'
+							onClick={() => {
+								setSectionId(index)
+								setScroll(true)
+							}}
+							sx={[
+								{
+									height: 1,
+									minWidth: 'max-content',
+									borderRadius: 0,
+								},
+								sectionId === index && {
+									borderBottom: (theme) =>
+										`2px solid ${theme.palette.secondary.main}`,
+								},
+							]}
+						>
+							{menu.label}
+						</Button>
+					)
 				})}
-			</Tabs>
+			</Toolbar>
 			<Box
 				sx={{
-					height: `calc(100dvh - 65px - 65px - 48px)`,
+					height: `calc(100dvh - 65px - 65px - 47px)`,
 					overflow: 'auto',
 					scrollBehavior: 'smooth',
 				}}
@@ -57,7 +69,7 @@ export const Menu = () => {
 						return (
 							<MenuItems
 								key={menu.label}
-								ref={selectedTab === index ? menuRef : null}
+								ref={sectionId === index ? sectionRef : null}
 								label={menu.label}
 								items={menu.items}
 							/>
