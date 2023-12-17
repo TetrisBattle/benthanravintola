@@ -1,12 +1,7 @@
 import { Box, Stack, Typography } from '@thng/react'
 import chili from 'assets/chili.png'
 import { Fragment, forwardRef } from 'react'
-
-type MenuItem = {
-	id: number
-	name: string
-	price: string
-}
+import { MenuItem } from './data'
 
 const MenuItem = forwardRef(
 	({ item }: { item: MenuItem }, ref: React.ForwardedRef<HTMLDivElement>) => {
@@ -47,7 +42,7 @@ const MenuItem = forwardRef(
 
 export const MenuItems = forwardRef(
 	(
-		{ title, items }: { title: string; items: MenuItem[] },
+		{ label, items }: { label: string; items: MenuItem[] },
 		ref: React.ForwardedRef<HTMLDivElement>
 	) => {
 		return (
@@ -60,10 +55,10 @@ export const MenuItems = forwardRef(
 						fontSize: '1.5rem',
 					}}
 				>
-					{title}
+					{label}
 				</Typography>
 				{items.map((item) => (
-					<MenuItem key={item.id} item={item} />
+					<MenuItem key={item.name} item={item} />
 				))}
 			</Stack>
 		)
