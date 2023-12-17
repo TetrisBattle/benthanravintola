@@ -5,7 +5,9 @@ import { Link, Typography } from '@thng/react'
 export const Footer = () => {
 	return (
 		<Box
+			component='footer'
 			sx={{
+				mt: 'auto',
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',

@@ -6,7 +6,7 @@ export const Yhteystiedot = () => {
 		<Box
 			id='Yhteystiedot'
 			sx={{
-				p: 3,
+				p: 2,
 				// textAlign: 'center',
 				display: 'flex',
 				flexDirection: 'column',

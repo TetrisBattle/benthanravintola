@@ -402,7 +402,7 @@ export const menu = {
 			price: '17.50e',
 		},
 	],
-	jarkiruoka: [
+	jalkiruoka: [
 		{
 			id: 78,
 			name: 'Paahdettua banaania ja jäätelö',

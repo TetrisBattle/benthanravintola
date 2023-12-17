@@ -18,18 +18,22 @@ export const Header = observer(() => {
 	]
 
 	return (
-		<AppBar
-			sx={{
-				boxShadow: 0,
-				borderBottom: (theme) =>
-					`1px solid ${theme.palette.secondary.main}`,
-			}}
-		>
-			{isMobile ? (
-				<MobileHeader routes={headerRoutes} />
-			) : (
-				<DesktopHeader routes={headerRoutes} />
-			)}
-		</AppBar>
+		<>
+			<AppBar
+				sx={{
+					position: 'sticky',
+					top: 0,
+					boxShadow: 0,
+					borderBottom: (theme) =>
+						`1px solid ${theme.palette.secondary.main}`,
+				}}
+			>
+				{isMobile ? (
+					<MobileHeader routes={headerRoutes} />
+				) : (
+					<DesktopHeader routes={headerRoutes} />
+				)}
+			</AppBar>
+		</>
 	)
 })

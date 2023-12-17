@@ -6,7 +6,7 @@ export const Etusivu = observer(() => {
 	const { appStore } = useStore()
 
 	return (
-		<Box id='Etusivu' sx={{ p: 3 }}>
+		<Box id='Etusivu' sx={{ p: 2 }}>
 			<Button onClick={appStore.toggleDarkMode}>Theme</Button>
 		</Box>
 	)
