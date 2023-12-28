@@ -7,12 +7,11 @@ export const Footer = () => {
 		<Box
 			component='footer'
 			sx={{
-				height: 64,
 				mt: 'auto',
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				py: 2,
+				py: 1,
 				px: 3,
 				borderTop: (theme) =>
 					`1px solid ${theme.palette.secondary.main}`,

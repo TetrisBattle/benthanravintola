@@ -220,7 +220,7 @@ export const menus: Menu = [
 			},
 			{
 				id: 38,
-				name: 'Härkää tomaattikastikkeessa * ',
+				name: 'Härkää tomaattikastikkeessa *',
 				price: '13.50e',
 			},
 			{
@@ -467,7 +467,12 @@ export const menus: Menu = [
 	},
 ]
 
-export const drinks = [
+type Drinks = {
+	name: string
+	price: string | { [key: string]: string }
+}[]
+
+export const drinks: Drinks = [
 	{
 		name: 'Vesi',
 		price: '0.90e',
@@ -579,12 +584,6 @@ export const alcohol = {
 			price: '7.50e',
 		},
 	],
-}
-
-export const additionalInfo = {
-	1: '* Melko voimakkaasti maustettua',
-	2: '** Voimakkaasti maustettua',
-	3: '*** Tajun vievästi maustettua',
 }
 
 export const pizza = [
@@ -846,4 +845,10 @@ export const lunch = {
 		'Lohta tomaattikastikkeessa *',
 		'Kasviksia hapanimeläkastikeessa',
 	],
+}
+
+export const additionalInfo = {
+	1: '* Melko voimakkaasti maustettua',
+	2: '** Voimakkaasti maustettua',
+	3: '*** Tajun vievästi maustettua',
 }

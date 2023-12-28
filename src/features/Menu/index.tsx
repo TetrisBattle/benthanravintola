@@ -1,67 +1,26 @@
-import { Box, Button, Toolbar, useTheme } from '@thng/react'
-import { useEffect, useRef, useState } from 'react'
+import { Box } from '@thng/react'
+import { useRef } from 'react'
 import { menus } from './data'
 import { MenuItems } from './MenuItems'
+import { MenuToolbar } from './MenuToolbar'
 
 export const Menu = () => {
-	const [sectionId, setSectionId] = useState(0)
-	const sectionRef = useRef<HTMLDivElement>(null)
-	const [scroll, setScroll] = useState(false)
-
-	useEffect(() => {
-		if (scroll) {
-			sectionRef.current?.scrollIntoView()
-			setScroll(false)
-		}
-	}, [scroll])
+	const sectionRefs = useRef<HTMLDivElement[] | null[]>([])
 
 	return (
 		<Box id='Menu'>
-			<Toolbar
-				sx={{
-					height: 48,
-					overflow: 'auto',
-					scrollbarWidth: 'none',
-					'::-webkit-scrollbar': {
-						display: 'none',
-					},
-					boxShadow: (theme) => [
-						`0px 1px 2px 0px ${theme.palette.secondary.main}`,
-					],
+			<MenuToolbar
+				items={menus.map((menu) => menu.label)}
+				onItemClick={(index) => {
+					sectionRefs.current?.[index]?.scrollIntoView({
+						behavior: 'smooth',
+					})
 				}}
-			>
-				{menus.map((menu, index) => {
-					return (
-						<Button
-							key={menu.label}
-							variant='text'
-							color='secondary'
-							onClick={() => {
-								setSectionId(index)
-								setScroll(true)
-							}}
-							sx={[
-								{
-									height: 1,
-									minWidth: 'max-content',
-									borderRadius: 0,
-								},
-								sectionId === index && {
-									borderBottom: (theme) =>
-										`2px solid ${theme.palette.secondary.main}`,
-								},
-							]}
-						>
-							{menu.label}
-						</Button>
-					)
-				})}
-			</Toolbar>
+			/>
 			<Box
 				sx={{
-					height: `calc(100dvh - 65px - 65px - 47px)`,
+					height: `calc(100dvh - 65px - 48px - 47px)`,
 					overflow: 'auto',
-					scrollBehavior: 'smooth',
 				}}
 			>
 				<Box sx={{ maxWidth: 600, mx: 'auto' }}>
@@ -69,7 +28,9 @@ export const Menu = () => {
 						return (
 							<MenuItems
 								key={menu.label}
-								ref={sectionId === index ? sectionRef : null}
+								ref={(el) => {
+									sectionRefs.current[index] = el
+								}}
 								label={menu.label}
 								items={menu.items}
 							/>

@@ -20,8 +20,10 @@ export const Header = observer(() => {
 	return (
 		<>
 			<AppBar
+				component='header'
 				sx={{
 					position: 'sticky',
+					zIndex: (theme) => theme.zIndex.drawer,
 					top: 0,
 					boxShadow: 0,
 					borderBottom: (theme) =>
