@@ -12,24 +12,41 @@ export const MenuToolbar = ({
 	const [selectedItem, setSelectedItem] = useState(0)
 	const toolbarRef = useRef<HTMLDivElement>(null)
 	const buttonRefs = useRef<HTMLButtonElement[] | null[]>([])
-	const [needScrollButtons, setNeedScrollButtons] = useState(false)
+	const [showLeftArrow, setShowLeftArrow] = useState(false)
+	const [showRightArrow, setShowRightArrow] = useState(false)
+	const [showArrows, setShowArrows] = useState(false)
 
 	useLayoutEffect(() => {
-		const toolbarButtonsWidth = buttonRefs.current.reduce(
-			(width, current) => {
-				return width + (current?.clientWidth ?? 0)
-			},
-			0
-		)
+		showArrowsByScroll()
+	}, [])
 
+	useLayoutEffect(() => {
 		const onResize = () => {
-			setNeedScrollButtons(window.innerWidth < toolbarButtonsWidth)
+			const arrowWidth = 34
+			const toolbarWidth =
+				(toolbarRef.current?.scrollWidth ?? 0) + arrowWidth * 2
+
+			if (window.innerWidth < toolbarWidth) {
+				setShowArrows(true)
+				showArrowsByScroll()
+			} else setShowArrows(false)
 		}
 
 		onResize()
 		window.addEventListener('resize', onResize)
 		return () => window.removeEventListener('resize', onResize)
-	}, [])
+	}, [selectedItem])
+
+	function showArrowsByScroll() {
+		const scrolledFromLeft = toolbarRef.current?.scrollLeft ?? 0
+		const scrollbarWidth = toolbarRef.current?.scrollWidth ?? 0
+		const containerWidth = toolbarRef.current?.clientWidth ?? 0
+		const scrolled =
+			(scrolledFromLeft / (scrollbarWidth - containerWidth)) * 100
+
+		setShowLeftArrow(scrolled === 0 ? false : true)
+		setShowRightArrow(scrolled > 95 ? false : true)
+	}
 
 	return (
 		<Toolbar
@@ -41,9 +58,11 @@ export const MenuToolbar = ({
 				justifyContent: 'center',
 			}}
 		>
-			{needScrollButtons && (
-				<DesktopArrowButton divRef={toolbarRef} direction='left' />
-			)}
+			<DesktopArrowButton
+				divRef={toolbarRef}
+				direction='left'
+				hidden={!showArrows || !showLeftArrow}
+			/>
 			<Box
 				ref={toolbarRef}
 				sx={{
@@ -54,6 +73,7 @@ export const MenuToolbar = ({
 						display: 'none',
 					},
 				}}
+				onScroll={showArrowsByScroll}
 			>
 				{items.map((item, index) => {
 					return (
@@ -89,9 +109,11 @@ export const MenuToolbar = ({
 					)
 				})}
 			</Box>
-			{needScrollButtons && (
-				<DesktopArrowButton divRef={toolbarRef} direction='right' />
-			)}
+			<DesktopArrowButton
+				divRef={toolbarRef}
+				direction='right'
+				hidden={!showArrows || !showRightArrow}
+			/>
 		</Toolbar>
 	)
 }

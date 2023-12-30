@@ -6,9 +6,11 @@ import { KeyboardArrowRight as RightArrowIcon } from '@mui/icons-material'
 export const DesktopArrowButton = ({
 	divRef,
 	direction,
+	hidden,
 }: {
 	divRef: React.RefObject<HTMLDivElement>
 	direction: 'left' | 'right'
+	hidden: boolean
 }) => {
 	return (
 		<BrowserView>
@@ -24,6 +26,7 @@ export const DesktopArrowButton = ({
 						behavior: 'smooth',
 					})
 				}}
+				sx={{ visibility: hidden ? 'hidden' : 'visible' }}
 			>
 				{direction === 'left' ? <LeftArrowIcon /> : <RightArrowIcon />}
 			</IconButton>
