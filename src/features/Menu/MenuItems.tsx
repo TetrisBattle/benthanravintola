@@ -6,8 +6,8 @@ import { MenuItem } from './data'
 const MenuItem = forwardRef(
 	({ item }: { item: MenuItem }, ref: React.ForwardedRef<HTMLDivElement>) => {
 		const chiliAmount = item.name.split('*').length - 1
-		const chiliImg = <img src={chili} alt='Chili' />
-		const chiliImgs = [...Array(chiliAmount)].map((_) => chiliImg)
+		const chiliImg = <img src={chili} alt='Chili' width={16} height={16} />
+		const chiliImgs = [...Array(chiliAmount)].map(() => chiliImg)
 		const name = item.name.replace(/\*/g, '')
 
 		return (
@@ -24,16 +24,15 @@ const MenuItem = forwardRef(
 					sx={{
 						display: 'flex',
 						flexWrap: 'wrap',
+						alignItems: 'center',
 					}}
 				>
-					<Typography>
+					<Typography sx={{ mr: 0.5 }}>
 						{item.id}. {name}
 					</Typography>
-					<Box sx={{ height: 24 }}>
-						{chiliImgs.map((img, index) => (
-							<Fragment key={index}>{img}</Fragment>
-						))}
-					</Box>
+					{chiliImgs.map((img, index) => (
+						<Fragment key={index}>{img}</Fragment>
+					))}
 				</Box>
 				<Typography>{item.price}</Typography>
 			</Box>
