@@ -23,7 +23,7 @@ export const Menu = () => {
 			<Box
 				ref={containerRef}
 				sx={{
-					height: `calc(100dvh - 65px - 48px - 47px)`,
+					height: `calc(100dvh - 65px - 48px - 48px)`,
 					overflow: 'auto',
 				}}
 			>

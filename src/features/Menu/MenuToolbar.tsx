@@ -1,36 +1,5 @@
-import { Box, Button, IconButton, Toolbar } from '@thng/react'
-import { useLayoutEffect, useRef, useState } from 'react'
-import { BrowserView } from 'react-device-detect'
-import { KeyboardArrowLeft as LeftArrowIcon } from '@mui/icons-material'
-import { KeyboardArrowRight as RightArrowIcon } from '@mui/icons-material'
-
-const DesktopArrowButton = ({
-	divRef,
-	direction,
-}: {
-	divRef: React.RefObject<HTMLDivElement>
-	direction: 'left' | 'right'
-}) => {
-	return (
-		<BrowserView>
-			<IconButton
-				size='small'
-				color='secondary'
-				onClick={() => {
-					divRef.current?.scrollBy({
-						left:
-							direction === 'left'
-								? -divRef.current.clientWidth * 0.8
-								: divRef.current.clientWidth * 0.8,
-						behavior: 'smooth',
-					})
-				}}
-			>
-				{direction === 'left' ? <LeftArrowIcon /> : <RightArrowIcon />}
-			</IconButton>
-		</BrowserView>
-	)
-}
+import { Tab, Tabs } from '@thng/react'
+import { useRef, useState } from 'react'
 
 export const MenuToolbar = ({
 	items,
@@ -39,89 +8,68 @@ export const MenuToolbar = ({
 	items: string[]
 	onItemClick: (index: number) => void
 }) => {
-	const [selectedItem, setSelectedItem] = useState(0)
+	const [selectedTab, setSelectedTab] = useState(0)
 	const toolbarRef = useRef<HTMLDivElement>(null)
-	const buttonRefs = useRef<HTMLButtonElement[] | null[]>([])
-	const [needScrollButtons, setNeedScrollButtons] = useState(false)
-
-	useLayoutEffect(() => {
-		const toolbarButtonsWidth = buttonRefs.current.reduce(
-			(width, current) => {
-				return width + (current?.clientWidth ?? 0)
-			},
-			0
-		)
-
-		const onResize = () => {
-			setNeedScrollButtons(window.innerWidth < toolbarButtonsWidth)
-		}
-
-		onResize()
-		window.addEventListener('resize', onResize)
-		return () => window.removeEventListener('resize', onResize)
-	}, [])
+	const buttonRefs = useRef<HTMLDivElement[] | null[]>([])
 
 	return (
-		<Toolbar
+		<Tabs
+			ref={toolbarRef}
+			value={selectedTab}
+			textColor='secondary'
+			indicatorColor='secondary'
+			variant='scrollable'
+			scrollButtons='auto'
+			TabIndicatorProps={{ sx: { transition: 'none' } }}
 			sx={{
-				height: 48,
-				boxShadow: (theme) => [
-					`0px 1px 2px 0px ${theme.palette.secondary.main}`,
-				],
-				justifyContent: 'center',
+				position: 'sticky',
+				top: 65, // Header height
+				bgcolor: (theme) => theme.palette.primary.main,
+				width: 1,
+				borderBottom: `1px solid`,
+				button: { color: (theme) => theme.palette.secondary.main },
+				' *': {
+					transition: 'none',
+				},
 			}}
 		>
-			{needScrollButtons && (
-				<DesktopArrowButton divRef={toolbarRef} direction='left' />
-			)}
-			<Box
-				ref={toolbarRef}
-				sx={{
-					overflow: 'auto',
-					display: 'flex',
-					scrollbarWidth: 'none',
-					'::-webkit-scrollbar': {
-						display: 'none',
-					},
-				}}
-			>
-				{items.map((item, index) => {
-					return (
-						<Button
-							key={index}
-							ref={(el) => {
-								buttonRefs.current[index] = el
-							}}
-							variant='text'
-							color='secondary'
-							onClick={() => {
-								setSelectedItem(index)
-								onItemClick(index)
-								buttonRefs.current[index]?.scrollIntoView({
-									behavior: 'smooth',
-									inline: 'center',
-								})
-							}}
-							sx={[
-								{
-									minWidth: 'max-content',
-									borderRadius: 0,
-									py: 0,
-								},
-								selectedItem === index && {
-									borderBottom: (theme) =>
-										`2px solid ${theme.palette.secondary.main}`,
-								},
-							]}
-						>
-							{item}
-						</Button>
-					)
-				})}
-			</Box>
-			{needScrollButtons && (
-				<DesktopArrowButton divRef={toolbarRef} direction='right' />
-			)}
-		</Toolbar>
+			{items.map((item, index) => {
+				return (
+					<Tab
+						key={item}
+						ref={(el) => {
+							buttonRefs.current[index] = el
+						}}
+						label={item}
+						onClick={() => {
+							setSelectedTab(index)
+							onItemClick(index)
+							buttonRefs.current[index]?.scrollIntoView({
+								behavior: 'smooth',
+								inline: 'center',
+							})
+
+							// Scroll to the selected tab
+							// const tabsContainer =
+							// 	toolbarRef.current?.children[2]
+							// const tab = buttonRefs.current[index]
+
+							// if (tabsContainer && tab) {
+							// 	const tabPos =
+							// 		tab.offsetLeft + tab.offsetWidth / 2
+							// 	const scrollPos = tabPos - window.innerWidth / 2
+
+							// 	requestAnimationFrame(() => {
+							// 		tabsContainer.scrollTo({
+							// 			left: scrollPos,
+							// 			behavior: 'smooth',
+							// 		})
+							// 	})
+							// }
+						}}
+					/>
+				)
+			})}
+		</Tabs>
 	)
 }
