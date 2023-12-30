@@ -5,6 +5,7 @@ import { MenuItems } from './MenuItems'
 import { MenuToolbar } from './MenuToolbar'
 
 export const Menu = () => {
+	const containerRef = useRef<HTMLDivElement>(null)
 	const sectionRefs = useRef<HTMLDivElement[] | null[]>([])
 
 	return (
@@ -12,12 +13,15 @@ export const Menu = () => {
 			<MenuToolbar
 				items={menus.map((menu) => menu.label)}
 				onItemClick={(index) => {
-					sectionRefs.current?.[index]?.scrollIntoView({
+					const section = sectionRefs.current[index]
+					containerRef.current?.scrollTo({
+						top: section ? section.offsetTop - 113 : undefined,
 						behavior: 'smooth',
 					})
 				}}
 			/>
 			<Box
+				ref={containerRef}
 				sx={{
 					height: `calc(100dvh - 65px - 48px - 47px)`,
 					overflow: 'auto',

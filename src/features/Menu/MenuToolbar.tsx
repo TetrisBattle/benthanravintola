@@ -96,11 +96,11 @@ export const MenuToolbar = ({
 							color='secondary'
 							onClick={() => {
 								setSelectedItem(index)
+								onItemClick(index)
 								buttonRefs.current[index]?.scrollIntoView({
 									behavior: 'smooth',
 									inline: 'center',
 								})
-								onItemClick(index)
 							}}
 							sx={[
 								{
