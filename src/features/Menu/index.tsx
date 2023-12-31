@@ -32,7 +32,12 @@ export const Menu = () => {
 					overflow: 'auto',
 				}}
 			>
-				<Box sx={{ maxWidth: 600, mx: 'auto' }}>
+				<Box
+					sx={{
+						maxWidth: (theme) => theme.breakpoints.values.sm,
+						mx: 'auto',
+					}}
+				>
 					{foods.map((food, index) => {
 						return (
 							<MenuItems

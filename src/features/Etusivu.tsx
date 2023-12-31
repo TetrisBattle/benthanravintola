@@ -1,13 +1,15 @@
-import { Stack, Typography } from '@thng/react'
+import { Stack, Typography, useTheme } from '@thng/react'
 import { observer } from 'mobx-react-lite'
 import sushiBuffetImg from 'assets/sushi_buffet.jpg'
 
 export const Etusivu = observer(() => {
+	const theme = useTheme()
+
 	return (
 		<Stack
 			id='Etusivu'
 			sx={{
-				maxWidth: 600,
+				maxWidth: (theme) => theme.breakpoints.values.sm,
 				p: 2,
 				mx: 'auto',
 				gap: 2,
@@ -45,7 +47,7 @@ export const Etusivu = observer(() => {
 				width='100%'
 				height='100%'
 				style={{
-					maxWidth: 600,
+					maxWidth: theme.breakpoints.values.sm,
 					marginInline: 'auto',
 				}}
 			/>

@@ -1,14 +1,11 @@
-import { AppBar } from '@thng/react'
+import { AppBar, useMediaQuery, useTheme } from '@thng/react'
 import { RouteOption } from 'App/Routes'
 import { MobileHeader } from './MobileHeader'
 import { DesktopHeader } from './DesktopHeader'
-import { useStore } from 'hooks/useStore'
 import { observer } from 'mobx-react-lite'
 
 export const Header = observer(() => {
-	const {
-		appStore: { isMobile },
-	} = useStore()
+	const theme = useTheme()
 
 	const headerRoutes = [
 		RouteOption.Etusivu,
@@ -29,7 +26,7 @@ export const Header = observer(() => {
 						`1px solid ${theme.palette.secondary.main}`,
 				}}
 			>
-				{isMobile ? (
+				{useMediaQuery(theme.breakpoints.down('sm')) ? (
 					<MobileHeader routes={headerRoutes} />
 				) : (
 					<DesktopHeader routes={headerRoutes} />
