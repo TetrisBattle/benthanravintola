@@ -1,15 +1,16 @@
-export type MenuItem = {
-	id: number
+export type Item = {
+	id?: number
 	name: string
-	price: string
+	description?: string
+	price: string | { [key: string]: string }
 }
 
-type Menu = {
+type Food = {
 	label: string
-	items: MenuItem[]
+	items: Item[]
 }[]
 
-export const menus: Menu = [
+export const foods: Food = [
 	{
 		label: 'Alkuruoka',
 		items: [
@@ -467,12 +468,223 @@ export const menus: Menu = [
 	},
 ]
 
-type Drinks = {
-	name: string
-	price: string | { [key: string]: string }
-}[]
+export const pizza: Item[] = [
+	{
+		id: 1,
+		name: 'Jauheliha pizza',
+		description: 'Jauhelija',
+		price: '6.80e',
+	},
+	{
+		id: 2,
+		name: 'Calzone',
+		description: 'Kinkku, jauhelija',
+		price: '7.20e',
+	},
+	{
+		id: 3,
+		name: 'Alcapone',
+		description: 'Kinkku, ananas, paprika',
+		price: '7.70e',
+	},
+	{
+		id: 4,
+		name: 'Caruzo',
+		description: 'Kinkku, herkkusieni, katkarapu',
+		price: '7.70e',
+	},
+	{
+		id: 5,
+		name: 'Napoli',
+		description: 'Kinkku, salami, herne',
+		price: '7.70e',
+	},
+	{
+		id: 6,
+		name: 'Venezia',
+		description: 'Salami, tonnikala, kananmuna',
+		price: '7.70e',
+	},
+	{
+		id: 7,
+		name: 'Tropicana',
+		description: 'Kinkku, ananas, aurajuusto',
+		price: '7.70e',
+	},
+	{
+		id: 8,
+		name: 'Hawai',
+		description: 'Kinkku, tonnikala, katkarapu',
+		price: '7.70e',
+	},
+	{
+		id: 9,
+		name: 'Pekonipizza',
+		description: 'Pekoni, pepperonimakkara, sipuli',
+		price: '7.70e',
+	},
+	{
+		id: 10,
+		name: 'Jenkki',
+		description: 'Salami, pekoni, sipuli',
+		price: '7.70e',
+	},
+	{
+		id: 11,
+		name: 'San zirnione',
+		description: 'Kinkku, paprika, sipuli, katkarapu',
+		price: '8.50e',
+	},
+	{
+		id: 12,
+		name: 'Mexicano',
+		description: 'Pepperoni, jalapeno, ananas',
+		price: '7.00e',
+	},
+	{
+		id: 13,
+		name: 'Vegetariana',
+		description: 'Herkkusieni, paprika, aurajuusto',
+		price: '7.00e',
+	},
+	{
+		id: 14,
+		name: 'Kebab pizza',
+		description: 'Kebab, chilikastike, pepperoni, jalapeno',
+		price: '8.90e',
+	},
+	{
+		id: 15,
+		name: 'Istanbul',
+		description: 'Kebab, pepperoni, sipuli, majoneesi',
+		price: '8.90e',
+	},
+	{
+		id: 16,
+		name: 'Kebab special',
+		description: 'Kebab, jauheliha, pepperoni, tuore-tomaatti',
+		price: '8.90e',
+	},
+	{
+		id: 17,
+		name: 'Fantasia',
+		description: 'Neljä täytettä makusi mukaan',
+		price: '9.20e',
+	},
+]
 
-export const drinks: Drinks = [
+type Sushi = {
+	nigiri: Item[]
+	maki: Item[]
+}
+
+export const sushi: Sushi = {
+	nigiri: [
+		{
+			id: 1,
+			name: 'Lohi nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 2,
+			name: 'Grillattu lohi nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 3,
+			name: 'Katkarapu nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 4,
+			name: 'Surimi nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 5,
+			name: 'Surimi majoneesi nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 6,
+			name: 'Kananmuna nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 7,
+			name: 'Tofu nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 8,
+			name: 'Avokado nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+		{
+			id: 9,
+			name: 'Kirjolohen mäti nigiri',
+			description: '10 kpl',
+			price: '8.00e',
+		},
+	],
+	maki: [
+		{
+			id: 10,
+			name: 'Lohi maki',
+			price: '8.00e',
+		},
+		{
+			id: 11,
+			name: 'Kurkku maki',
+			price: '8.00e',
+		},
+		{
+			id: 12,
+			name: 'Acokado maki',
+			price: '8.00e',
+		},
+		{
+			id: 13,
+			name: 'Grillattu lohi maki',
+			price: '8.00e',
+		},
+		{
+			id: 14,
+			name: 'California maki',
+			price: '8.00e',
+			description: 'surimi, avokado, kurkku, majoneesi',
+		},
+		{
+			id: 15,
+			name: 'Philadelfia maki',
+			price: '8.00e',
+			description: 'lohi, avokado, kurkku, majoneesi',
+		},
+		{
+			id: 16,
+			name: 'Dragon roll',
+			price: '8.00e',
+			description: 'pahdettuja katkarapuja, kurkku, philadeljuusto',
+		},
+		{
+			id: 17,
+			name: 'Kasvis-california maki',
+			price: '8.00e',
+			description:
+				'avokado, kurkku, paprika, grillattu sipuli, majoneesi',
+		},
+	],
+}
+
+export const drinks: Item[] = [
 	{
 		name: 'Vesi',
 		price: '0.90e',
@@ -532,17 +744,23 @@ export const drinks: Drinks = [
 	},
 ]
 
-export const alcohol = {
+type strongAlcohols = {
+	redWines: Item[]
+	whiteWines: Item[]
+	liquors: Item[]
+}
+
+export const strongAlcohols: strongAlcohols = {
 	redWines: [
 		{
 			name: 'Rosiere syrah',
+			description: 'Ranska kevyt, puolikuiva, pehmeä, makean marjaisa',
 			price: {
 				'12cl': '6.90e',
 				'16cl': '8.10e',
 				'24cl': '10.50e',
 				'75cl / pullo': '27.00e',
 			},
-			description: 'Ranska kevyt, puolikuiva, pehmeä, makean marjaisa',
 		},
 		{
 			name: "Jacob's creek",
@@ -567,232 +785,18 @@ export const alcohol = {
 	],
 	liquors: [
 		{
-			name: 'Monopol v.s.o.p.',
-			type: 'Cognac',
-			size: '4cl',
+			name: 'Monopol v.s.o.p. (4cl)',
+			description: 'Cognac',
 			price: '7.50e',
 		},
 		{
-			name: "Jack Daniel's",
-			type: 'Whiskey',
-			size: '4cl',
+			name: "Jack Daniel's (4cl)",
+			description: 'Whiskey',
 			price: '7.50e',
 		},
 		{
-			name: 'Koskenkorva',
-			size: '4cl',
+			name: 'Koskenkorva (4cl)',
 			price: '7.50e',
-		},
-	],
-}
-
-export const pizza = [
-	{
-		id: 1,
-		name: 'Jauheliha pizza',
-		ingredients: 'Jauhelija',
-		price: '6.80e',
-	},
-	{
-		id: 2,
-		name: 'Calzone',
-		ingredients: 'Kinkku, jauhelija',
-		price: '7.20e',
-	},
-	{
-		id: 3,
-		name: 'Alcapone',
-		ingredients: 'Kinkku, ananas, paprika',
-		price: '7.70e',
-	},
-	{
-		id: 4,
-		name: 'Caruzo',
-		ingredients: 'Kinkku, herkkusieni, katkarapu',
-		price: '7.70e',
-	},
-	{
-		id: 5,
-		name: 'Napoli',
-		ingredients: 'Kinkku, salami, herne',
-		price: '7.70e',
-	},
-	{
-		id: 6,
-		name: 'Venezia',
-		ingredients: 'Salami, tonnikala, kananmuna',
-		price: '7.70e',
-	},
-	{
-		id: 7,
-		name: 'Tropicana',
-		ingredients: 'Kinkku, ananas, aurajuusto',
-		price: '7.70e',
-	},
-	{
-		id: 8,
-		name: 'Hawai',
-		ingredients: 'Kinkku, tonnikala, katkarapu',
-		price: '7.70e',
-	},
-	{
-		id: 9,
-		name: 'Pekonipizza',
-		ingredients: 'Pekoni, pepperonimakkara, sipuli',
-		price: '7.70e',
-	},
-	{
-		id: 10,
-		name: 'Jenkki',
-		ingredients: 'Salami, pekoni, sipuli',
-		price: '7.70e',
-	},
-	{
-		id: 11,
-		name: 'San zirnione',
-		ingredients: 'Kinkku, paprika, sipuli, katkarapu',
-		price: '8.50e',
-	},
-	{
-		id: 12,
-		name: 'Mexicano',
-		ingredients: 'Pepperoni, jalapeno, ananas',
-		price: '7.00e',
-	},
-	{
-		id: 13,
-		name: 'Vegetariana',
-		ingredients: 'Herkkusieni, paprika, aurajuusto',
-		price: '7.00e',
-	},
-	{
-		id: 14,
-		name: 'Kebab pizza',
-		ingredients: 'Kebab, chilikastike, pepperoni, jalapeno',
-		price: '8.90e',
-	},
-	{
-		id: 15,
-		name: 'Istanbul',
-		ingredients: 'Kebab, pepperoni, sipuli, majoneesi',
-		price: '8.90e',
-	},
-	{
-		id: 16,
-		name: 'Kebab special',
-		ingredients: 'Kebab, jauheliha, pepperoni, tuore-tomaatti',
-		price: '8.90e',
-	},
-	{
-		id: 17,
-		name: 'Fantasia',
-		ingredients: 'Neljä täytettä makusi mukaan',
-		price: '9.20e',
-	},
-]
-
-export const sushi = {
-	nigiri: [
-		{
-			id: 1,
-			name: 'Lohi nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 2,
-			name: 'Grillattu lohi nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 3,
-			name: 'Katkarapu nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 4,
-			name: 'Surimi nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 5,
-			name: 'Surimi majoneesi nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 6,
-			name: 'Kananmuna nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 7,
-			name: 'Tofu nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 8,
-			name: 'Avokado nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-		{
-			id: 9,
-			name: 'Kirjolohen mäti nigiri',
-			kpl: 10,
-			price: '8.00e',
-		},
-	],
-	maki: [
-		{
-			id: 10,
-			name: 'Lohi maki',
-			price: '8.00e',
-		},
-		{
-			id: 11,
-			name: 'Kurkku maki',
-			price: '8.00e',
-		},
-		{
-			id: 12,
-			name: 'Acokado maki',
-			price: '8.00e',
-		},
-		{
-			id: 13,
-			name: 'Grillattu lohi maki',
-			price: '8.00e',
-		},
-		{
-			id: 14,
-			name: 'California maki',
-			price: '8.00e',
-			description: 'surimi, avokado, kurkku, majoneesi',
-		},
-		{
-			id: 15,
-			name: 'Philadelfia maki',
-			price: '8.00e',
-			description: 'lohi, avokado, kurkku, majoneesi',
-		},
-		{
-			id: 16,
-			name: 'Dragon roll',
-			price: '8.00e',
-			description: 'pahdettuja katkarapuja, kurkku, philadeljuusto',
-		},
-		{
-			id: 17,
-			name: 'Kasvis-california maki',
-			price: '8.00e',
-			description:
-				'avokado, kurkku, paprika, grillattu sipuli, majoneesi',
 		},
 	],
 }

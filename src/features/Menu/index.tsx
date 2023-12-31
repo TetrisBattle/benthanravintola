@@ -1,6 +1,6 @@
 import { Box } from '@thng/react'
 import { useRef } from 'react'
-import { menus } from './data'
+import { foods, pizza, sushi, drinks, strongAlcohols } from './data'
 import { MenuItems } from './MenuItems'
 import { MenuToolbar } from './MenuToolbar'
 
@@ -11,7 +11,12 @@ export const Menu = () => {
 	return (
 		<Box id='Menu'>
 			<MenuToolbar
-				items={menus.map((menu) => menu.label)}
+				items={[
+					...foods.map((food) => food.label),
+					'Pizza',
+					'Sushi',
+					'Juomat',
+				]}
 				onItemClick={(index) => {
 					const section = sectionRefs.current[index]
 					containerRef.current?.scrollTo({
@@ -28,18 +33,63 @@ export const Menu = () => {
 				}}
 			>
 				<Box sx={{ maxWidth: 600, mx: 'auto' }}>
-					{menus.map((menu, index) => {
+					{foods.map((food, index) => {
 						return (
 							<MenuItems
-								key={menu.label}
+								key={food.label}
 								ref={(el) => {
 									sectionRefs.current[index] = el
 								}}
-								label={menu.label}
-								items={menu.items}
+								label={food.label}
+								items={food.items}
 							/>
 						)
 					})}
+					<MenuItems
+						key='pizza'
+						ref={(el) => {
+							sectionRefs.current[foods.length] = el
+						}}
+						label='pizza'
+						items={pizza}
+					/>
+					<MenuItems
+						key='sushi-nigiri'
+						ref={(el) => {
+							sectionRefs.current[foods.length + 1] = el
+						}}
+						label='Sushi'
+						subLabel='Nigiri'
+						items={sushi.nigiri}
+					/>
+					<MenuItems
+						key='sushi-maki'
+						subLabel='Maki'
+						items={sushi.maki}
+					/>
+					<MenuItems
+						key='drinks'
+						ref={(el) => {
+							sectionRefs.current[foods.length + 2] = el
+						}}
+						label='Juomat'
+						items={drinks}
+					/>
+					<MenuItems
+						key='redWines'
+						subLabel='Punaviini'
+						items={strongAlcohols.redWines}
+					/>
+					<MenuItems
+						key='whiteWines'
+						subLabel='Valkoviini'
+						items={strongAlcohols.whiteWines}
+					/>
+					<MenuItems
+						key='liquors'
+						subLabel='Väkevät'
+						items={strongAlcohols.liquors}
+					/>
 				</Box>
 			</Box>
 		</Box>
