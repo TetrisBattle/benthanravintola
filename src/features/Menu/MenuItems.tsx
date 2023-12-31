@@ -78,7 +78,7 @@ export const MenuItems = forwardRef(
 					sx={{
 						fontWeight: (theme) =>
 							theme.typography.fontWeightMedium,
-						fontSize: '1.5rem',
+						fontSize: (theme) => theme.typography.pxToRem(24),
 					}}
 				>
 					{label}
@@ -89,7 +89,7 @@ export const MenuItems = forwardRef(
 						sx={{
 							fontWeight: (theme) =>
 								theme.typography.fontWeightMedium,
-							fontSize: '1.25rem',
+							fontSize: (theme) => theme.typography.pxToRem(20),
 						}}
 					>
 						{subLabel}

@@ -13,7 +13,6 @@ export const Header = observer(() => {
 	const headerRoutes = [
 		RouteOption.Etusivu,
 		RouteOption.Menu,
-		RouteOption.Kuvagalleria,
 		RouteOption.Yhteystiedot,
 	]
 

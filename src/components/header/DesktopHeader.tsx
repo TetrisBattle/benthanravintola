@@ -9,7 +9,7 @@ const HeaderButton = ({ route }: { route: RouteOption }) => {
 			to={route}
 			variant='text'
 			sx={(theme) => ({
-				fontSize: '1.25rem',
+				fontSize: (theme) => theme.typography.pxToRem(20),
 				fontWeight: (theme) => theme.typography.fontWeightMedium,
 				color: 'inherit',
 				'&.active': {
