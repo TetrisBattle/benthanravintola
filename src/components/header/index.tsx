@@ -10,6 +10,7 @@ export const Header = observer(() => {
 	const headerRoutes = [
 		RouteOption.Etusivu,
 		RouteOption.Menu,
+		RouteOption.Lounas,
 		RouteOption.Yhteystiedot,
 	]
 

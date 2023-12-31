@@ -1,6 +1,7 @@
 import { Root } from 'App/Root'
 import { Etusivu } from 'features/Etusivu'
 import { Menu } from 'features/Menu'
+import { Lounas } from 'features/Lounas'
 import { Yhteystiedot } from 'features/Yhteystiedot'
 import { NotFound } from 'features/NotFound'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
@@ -10,6 +11,7 @@ export enum RouteOption {
 	NotFound = '/404',
 	Etusivu = '/etusivu',
 	Menu = '/menu',
+	Lounas = '/lounas',
 	Yhteystiedot = '/yhteystiedot',
 }
 
@@ -29,6 +31,7 @@ export const router = createBrowserRouter([
 			},
 			{ path: RouteOption.Etusivu, element: <Etusivu /> },
 			{ path: RouteOption.Menu, element: <Menu /> },
+			{ path: RouteOption.Lounas, element: <Lounas /> },
 			{ path: RouteOption.Yhteystiedot, element: <Yhteystiedot /> },
 		],
 	},

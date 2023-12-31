@@ -1,6 +1,7 @@
 import { Stack, Typography, useTheme } from '@thng/react'
 import { observer } from 'mobx-react-lite'
 import sushiBuffetImg from 'assets/sushi_buffet.jpg'
+import { lunch } from './Lounas/lounasData'
 
 export const Etusivu = observer(() => {
 	const theme = useTheme()
@@ -29,10 +30,10 @@ export const Etusivu = observer(() => {
 			<Typography>
 				Ben Than Ravintola toivottaa sinut tervetulleeksi
 				vietnamilaiseen ravintolaan. Tarjoilemme herkullista
-				buffet-lounasta joka päivä arkisin klo 10:30 - 15:00. Buffetin
-				hinta on 12,20e. Buffettimme sisältää vietnamilaisien ruokien
-				lisäksi pitzaa ja sushia. Lounaalla voit nauttia runsaista
-				annoksista kaikkia suosikkiruokiasi.
+				buffet-lounasta joka päivä arkisin klo {lunch.time}. Buffetin
+				hinta on {lunch.price}. Buffettimme sisältää vietnamilaisien
+				ruokien lisäksi pitzaa ja sushia. Lounaalla voit nauttia
+				runsaista annoksista kaikkia suosikkiruokiasi.
 			</Typography>
 
 			<Typography>

@@ -801,58 +801,8 @@ export const strongAlcohols: strongAlcohols = {
 	],
 }
 
-export const lunch = {
-	price: '12.20e',
-	time: '10:30 - 15:00',
-	monday: [
-		'Kanaa osterikastikkeessa *',
-		'Possua szechuan **',
-		'Härkää ananasta **',
-		'Riisiä ja kanaa',
-		'Riisipastaa, possua ja kanaa',
-		'Lohta chilikastikkeessa ***',
-		'Kasviksia currykastikkeessa *',
-	],
-	tuesday: [
-		'Kanaa sataykastikkeessa*',
-		'Possua hoisin-kastikkeessa',
-		'Härkää chilikastikkeessa***',
-		'Riisiä vietnamilaiseen tapaan*',
-		'Riisivermiselliä ja härkää',
-		'Lohta hapanimelläkastikkeessa',
-		'Kasviksia voimakas-valkosipuli',
-	],
-	wednesday: [
-		'Kanaa szechuan **',
-		'Possua tomaattikastikkeessa *',
-		'Härkää voimakas-valkosipuli **',
-		'Riisiä ja härkää',
-		'Riisipastaa possua ja kanaa',
-		'Lohta currykastikkeessa *',
-		'Kasviksia chilikastikkeessa ***',
-	],
-	thursday: [
-		'Kanaa chilikastikkeessa ***',
-		'Possua currykastikkeessa*',
-		'Härkää sataykastikkeessa *',
-		'Riisiä ja possua',
-		'Tofu hoisin-kastikkeessa',
-		'Lohta szechuan **',
-		'Kasviksia osterikastikkeessa *',
-	],
-	friday: [
-		'Kanaa voimakas-valkosipuli **',
-		'Possua talon tapaan *',
-		'Härkä szechuan **',
-		'Riisi special **',
-		'Nuudeli, kanaa, kananmuna, ja katkarapuja',
-		'Lohta tomaattikastikkeessa *',
-		'Kasviksia hapanimeläkastikeessa',
-	],
-}
-
-export const additionalInfo = {
-	1: '* Melko voimakkaasti maustettua',
-	2: '** Voimakkaasti maustettua',
-	3: '*** Tajun vievästi maustettua',
-}
+// export const additionalInfo = {
+// 	1: '* Melko voimakkaasti maustettua',
+// 	2: '** Voimakkaasti maustettua',
+// 	3: '*** Tajun vievästi maustettua',
+// }

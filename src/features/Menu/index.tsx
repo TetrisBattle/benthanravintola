@@ -1,6 +1,6 @@
 import { Box } from '@thng/react'
 import { useRef } from 'react'
-import { foods, pizza, sushi, drinks, strongAlcohols } from './data'
+import { foods, pizza, sushi, drinks, strongAlcohols } from './menuData'
 import { MenuItems } from './MenuItems'
 import { MenuToolbar } from './MenuToolbar'
 

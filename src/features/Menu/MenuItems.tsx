@@ -1,29 +1,7 @@
 import { Box, Stack, Typography } from '@thng/react'
-import chili from 'assets/chili.png'
-import { Fragment, forwardRef } from 'react'
-import { Item } from './data'
-
-const ListName = ({ item }: { item: Item }) => {
-	const chiliAmount = item.name.split('*').length - 1
-	const chiliImg = <img src={chili} alt='Chili' width={16} height={16} />
-	const chiliImgs = [...Array(chiliAmount)].map(() => chiliImg)
-	const name = item.name.replace(/\*/g, '')
-	return (
-		<Box
-			sx={{
-				display: 'flex',
-				flexWrap: 'wrap',
-				alignItems: 'center',
-			}}
-		>
-			{item.id && <Typography>{item.id}.&nbsp;</Typography>}
-			<Typography sx={{ mr: 0.5 }}>{name}</Typography>
-			{chiliImgs.map((img, index) => (
-				<Fragment key={index}>{img}</Fragment>
-			))}
-		</Box>
-	)
-}
+import { forwardRef } from 'react'
+import { Item } from './menuData'
+import { ChiliText } from 'components/ChiliText'
 
 const MenuItem = ({ item }: { item: Item }) => {
 	if (typeof item.price === 'string') {
@@ -36,7 +14,7 @@ const MenuItem = ({ item }: { item: Item }) => {
 					gap: 1,
 				}}
 			>
-				<ListName item={item} />
+				<ChiliText item={item} />
 				<Typography>{item.price}</Typography>
 			</Box>
 		)
@@ -51,7 +29,7 @@ const MenuItem = ({ item }: { item: Item }) => {
 
 		return (
 			<>
-				<ListName item={item} />
+				<ChiliText item={item} />
 				{items.map((item) => (
 					<MenuItem key={item.name} item={item} />
 				))}
