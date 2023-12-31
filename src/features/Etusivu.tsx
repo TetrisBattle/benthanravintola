@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@thng/react'
+import { Stack, Typography } from '@thng/react'
 import { observer } from 'mobx-react-lite'
 import sushiBuffetImg from 'assets/sushi_buffet.jpg'
 
@@ -39,19 +39,16 @@ export const Etusivu = observer(() => {
 				täydellinen tapa kokea Etelä-Aasian tunnelmaa.
 			</Typography>
 
-			<Box
-				sx={{
+			<img
+				src={sushiBuffetImg}
+				alt='Sushi buffet'
+				width='100%'
+				height='100%'
+				style={{
 					maxWidth: 600,
-					mx: 'auto',
+					marginInline: 'auto',
 				}}
-			>
-				<img
-					src={sushiBuffetImg}
-					alt='Sushi buffet'
-					width='100%'
-					height='100%'
-				/>
-			</Box>
+			/>
 		</Stack>
 	)
 })
