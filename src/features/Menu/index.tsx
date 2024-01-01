@@ -1,8 +1,8 @@
 import { Box } from '@thng/react'
 import { useRef } from 'react'
-import { foods, pizza, sushi, drinks, strongAlcohols } from './menuData'
-import { MenuItems } from './MenuItems'
+import { MenuList } from './MenuList'
 import { MenuToolbar } from './MenuToolbar'
+import { foods, pizza, sushi, drinks, strongAlcohols } from './menu'
 
 export const Menu = () => {
 	const containerRef = useRef<HTMLDivElement>(null)
@@ -40,7 +40,7 @@ export const Menu = () => {
 				>
 					{foods.map((food, index) => {
 						return (
-							<MenuItems
+							<MenuList
 								key={food.label}
 								ref={(el) => {
 									sectionRefs.current[index] = el
@@ -50,7 +50,7 @@ export const Menu = () => {
 							/>
 						)
 					})}
-					<MenuItems
+					<MenuList
 						key='pizza'
 						ref={(el) => {
 							sectionRefs.current[foods.length] = el
@@ -58,7 +58,7 @@ export const Menu = () => {
 						label='pizza'
 						items={pizza}
 					/>
-					<MenuItems
+					<MenuList
 						key='sushi-nigiri'
 						ref={(el) => {
 							sectionRefs.current[foods.length + 1] = el
@@ -67,12 +67,12 @@ export const Menu = () => {
 						subLabel='Nigiri'
 						items={sushi.nigiri}
 					/>
-					<MenuItems
+					<MenuList
 						key='sushi-maki'
 						subLabel='Maki'
 						items={sushi.maki}
 					/>
-					<MenuItems
+					<MenuList
 						key='drinks'
 						ref={(el) => {
 							sectionRefs.current[foods.length + 2] = el
@@ -80,17 +80,17 @@ export const Menu = () => {
 						label='Juomat'
 						items={drinks}
 					/>
-					<MenuItems
+					<MenuList
 						key='redWines'
 						subLabel='Punaviini'
 						items={strongAlcohols.redWines}
 					/>
-					<MenuItems
+					<MenuList
 						key='whiteWines'
 						subLabel='Valkoviini'
 						items={strongAlcohols.whiteWines}
 					/>
-					<MenuItems
+					<MenuList
 						key='liquors'
 						subLabel='Väkevät'
 						items={strongAlcohols.liquors}

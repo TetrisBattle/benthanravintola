@@ -29,10 +29,10 @@ const Section = ({
 	</Box>
 )
 
-export const Yhteystiedot = () => {
+export const Contact = () => {
 	return (
 		<Stack
-			id='Yhteystiedot'
+			id='Contact'
 			sx={{
 				p: 2,
 				gap: 3,

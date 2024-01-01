@@ -1,9 +1,13 @@
 import { Box, PartialKey, Typography } from '@thng/react'
 import chili from 'assets/chili.png'
-import { Item } from 'features/Menu/menuData'
+import { MenuItem } from 'features/Menu/menu'
 import { Fragment } from 'react'
 
-export const ChiliText = ({ item }: { item: PartialKey<Item, 'price'> }) => {
+type ChiliTextProps = {
+	item: PartialKey<MenuItem, 'price'>
+}
+
+export const ChiliText = ({ item }: ChiliTextProps) => {
 	const chiliAmount = item.name.split('*').length - 1
 	const chiliImg = <img src={chili} alt='Chili' width={16} height={16} />
 	const chiliImgs = [...Array(chiliAmount)].map(() => chiliImg)

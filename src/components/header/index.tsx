@@ -8,10 +8,10 @@ export const Header = observer(() => {
 	const theme = useTheme()
 
 	const headerRoutes = [
-		RouteOption.Etusivu,
+		RouteOption.Home,
 		RouteOption.Menu,
-		RouteOption.Lounas,
-		RouteOption.Yhteystiedot,
+		RouteOption.Lunch,
+		RouteOption.Contact,
 	]
 
 	return (

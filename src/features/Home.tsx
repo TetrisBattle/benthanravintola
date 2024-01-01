@@ -1,14 +1,16 @@
 import { Stack, Typography, useTheme } from '@thng/react'
 import { observer } from 'mobx-react-lite'
 import sushiBuffetImg from 'assets/sushi_buffet.jpg'
-import { lunch } from './Lounas/lounasData'
+import { lunch } from 'features/Lunch/lunch'
+import { useStore } from 'hooks/useStore'
 
-export const Etusivu = observer(() => {
+export const Home = observer(() => {
+	const { translator } = useStore()
 	const theme = useTheme()
 
 	return (
 		<Stack
-			id='Etusivu'
+			id='Home'
 			sx={{
 				maxWidth: (theme) => theme.breakpoints.values.sm,
 				p: 2,
@@ -24,23 +26,18 @@ export const Etusivu = observer(() => {
 					fontWeight: (theme) => theme.typography.fontWeightMedium,
 				}}
 			>
-				Ben Than Ravintola
+				{translator.tr('COMPANY_NAME')}
 			</Typography>
 
 			<Typography>
-				Ben Than Ravintola toivottaa sinut tervetulleeksi
-				vietnamilaiseen ravintolaan. Tarjoilemme herkullista
-				buffet-lounasta joka päivä arkisin klo {lunch.time}. Buffetin
-				hinta on {lunch.price}. Buffettimme sisältää vietnamilaisien
-				ruokien lisäksi pitzaa ja sushia. Lounaalla voit nauttia
-				runsaista annoksista kaikkia suosikkiruokiasi.
+				{translator.tr(
+					'HOME_DESCRIPTION_BUFFET',
+					lunch.time,
+					lunch.price
+				)}
 			</Typography>
 
-			<Typography>
-				Vietnamilainen ruoka on täynnä makua, väriä ja tuoreutta.
-				Ravintolassamme on lämmin ja viihtyisä tunnelma. Tämä on
-				täydellinen tapa kokea Etelä-Aasian tunnelmaa.
-			</Typography>
+			<Typography>{translator.tr('HOME_DESCRIPTION_VIETNAM')}</Typography>
 
 			<img
 				src={sushiBuffetImg}

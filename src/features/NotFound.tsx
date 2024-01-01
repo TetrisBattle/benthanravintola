@@ -15,7 +15,7 @@ export const NotFound = () => {
 			}}
 		>
 			<Typography variant='h1'>Sivua ei löytynyt!</Typography>
-			<Button component={Link} to={RouteOption.Etusivu}>
+			<Button component={Link} to={RouteOption.Home}>
 				Palaa etusivulle
 			</Button>
 		</Box>

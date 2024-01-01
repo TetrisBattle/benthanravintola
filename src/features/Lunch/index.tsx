@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@thng/react'
-import { lunch } from './lounasData'
 import { ChiliText } from 'components/ChiliText'
+import { lunch } from './lunch'
 
 const Section = ({ title, foods }: { title: string; foods: string[] }) => (
 	<Box component='section'>
@@ -17,10 +17,10 @@ const Section = ({ title, foods }: { title: string; foods: string[] }) => (
 	</Box>
 )
 
-export const Lounas = () => {
+export const Lunch = () => {
 	return (
 		<Stack
-			id='Etusivu'
+			id='Lunch'
 			sx={{
 				maxWidth: (theme) => theme.breakpoints.values.sm,
 				p: 2,

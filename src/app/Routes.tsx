@@ -1,18 +1,19 @@
 import { Root } from 'App/Root'
-import { Etusivu } from 'features/Etusivu'
+import { Home } from 'features/Home'
 import { Menu } from 'features/Menu'
-import { Lounas } from 'features/Lounas'
-import { Yhteystiedot } from 'features/Yhteystiedot'
+import { Lunch } from 'features/Lunch'
+import { Contact } from 'features/Contact'
 import { NotFound } from 'features/NotFound'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
+import { Translation } from 'translations'
 
 export enum RouteOption {
 	Root = '/',
 	NotFound = '/404',
-	Etusivu = '/etusivu',
+	Home = '/home',
 	Menu = '/menu',
-	Lounas = '/lounas',
-	Yhteystiedot = '/yhteystiedot',
+	Lunch = '/lunch',
+	Contact = '/contact',
 }
 
 export const router = createBrowserRouter([
@@ -27,17 +28,27 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: '/',
-				element: <Navigate replace to={RouteOption.Etusivu} />,
+				element: <Navigate replace to={RouteOption.Home} />,
 			},
-			{ path: RouteOption.Etusivu, element: <Etusivu /> },
+			{ path: RouteOption.Home, element: <Home /> },
 			{ path: RouteOption.Menu, element: <Menu /> },
-			{ path: RouteOption.Lounas, element: <Lounas /> },
-			{ path: RouteOption.Yhteystiedot, element: <Yhteystiedot /> },
+			{ path: RouteOption.Lunch, element: <Lunch /> },
+			{ path: RouteOption.Contact, element: <Contact /> },
 		],
 	},
 ])
 
-export const routeToTitle = (route: RouteOption): string => {
-	if (route === RouteOption.Root) return ''
-	return route[1].toUpperCase() + route.slice(2)
+export const routeTitle = (route: RouteOption): Translation => {
+	switch (route) {
+		case RouteOption.Home:
+			return 'HOME'
+		case RouteOption.Menu:
+			return 'MENU'
+		case RouteOption.Lunch:
+			return 'LUNCH'
+		case RouteOption.Contact:
+			return 'CONTACT'
+		default:
+			return 'ERROR'
+	}
 }

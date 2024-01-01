@@ -1,9 +1,9 @@
 import { Box, Stack, Typography } from '@thng/react'
 import { forwardRef } from 'react'
-import { Item } from './menuData'
+import { MenuItem } from './menu'
 import { ChiliText } from 'components/ChiliText'
 
-const MenuItem = ({ item }: { item: Item }) => {
+const MenuListItem = ({ item }: { item: MenuItem }) => {
 	if (typeof item.price === 'string') {
 		return (
 			<Box
@@ -31,22 +31,22 @@ const MenuItem = ({ item }: { item: Item }) => {
 			<>
 				<ChiliText item={item} />
 				{items.map((item) => (
-					<MenuItem key={item.name} item={item} />
+					<MenuListItem key={item.name} item={item} />
 				))}
 			</>
 		)
 	} else return <></>
 }
 
-type MenuItemsProps = {
+type MenuListProps = {
 	label?: string
 	subLabel?: string
-	items: Item[]
+	items: MenuItem[]
 }
 
-export const MenuItems = forwardRef(
+export const MenuList = forwardRef(
 	(
-		{ label, subLabel, items }: MenuItemsProps,
+		{ label, subLabel, items }: MenuListProps,
 		ref: React.ForwardedRef<HTMLDivElement>
 	) => {
 		return (
@@ -75,7 +75,7 @@ export const MenuItems = forwardRef(
 				)}
 				<Box component='ul' sx={{ m: 0, p: 0 }}>
 					{items.map((item) => (
-						<MenuItem key={item.name} item={item} />
+						<MenuListItem key={item.name} item={item} />
 					))}
 				</Box>
 			</Stack>

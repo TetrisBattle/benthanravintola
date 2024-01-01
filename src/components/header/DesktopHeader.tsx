@@ -1,8 +1,11 @@
 import { Box, Button, Toolbar } from '@thng/react'
-import { RouteOption, routeToTitle } from 'App/Routes'
+import { RouteOption, routeTitle } from 'App/Routes'
+import { useStore } from 'hooks/useStore'
 import { NavLink } from 'react-router-dom'
 
 const HeaderButton = ({ route }: { route: RouteOption }) => {
+	const { translator } = useStore()
+
 	return (
 		<Button
 			component={NavLink}
@@ -17,7 +20,7 @@ const HeaderButton = ({ route }: { route: RouteOption }) => {
 				},
 			})}
 		>
-			{routeToTitle(route)}
+			{translator.tr(routeTitle(route))}
 		</Button>
 	)
 }

@@ -1,4 +1,4 @@
-export type Item = {
+export type MenuItem = {
 	id?: number
 	name: string
 	description?: string
@@ -7,7 +7,7 @@ export type Item = {
 
 type Food = {
 	label: string
-	items: Item[]
+	items: MenuItem[]
 }[]
 
 export const foods: Food = [
@@ -468,7 +468,7 @@ export const foods: Food = [
 	},
 ]
 
-export const pizza: Item[] = [
+export const pizza: MenuItem[] = [
 	{
 		id: 1,
 		name: 'Jauheliha pizza',
@@ -574,8 +574,8 @@ export const pizza: Item[] = [
 ]
 
 type Sushi = {
-	nigiri: Item[]
-	maki: Item[]
+	nigiri: MenuItem[]
+	maki: MenuItem[]
 }
 
 export const sushi: Sushi = {
@@ -684,7 +684,7 @@ export const sushi: Sushi = {
 	],
 }
 
-export const drinks: Item[] = [
+export const drinks: MenuItem[] = [
 	{
 		name: 'Vesi',
 		price: '0.90e',
@@ -745,9 +745,9 @@ export const drinks: Item[] = [
 ]
 
 type strongAlcohols = {
-	redWines: Item[]
-	whiteWines: Item[]
-	liquors: Item[]
+	redWines: MenuItem[]
+	whiteWines: MenuItem[]
+	liquors: MenuItem[]
 }
 
 export const strongAlcohols: strongAlcohols = {
