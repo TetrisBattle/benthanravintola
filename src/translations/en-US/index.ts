@@ -1,14 +1,13 @@
-import { Translations } from 'translations'
+import { global } from '../trGlobal'
+import { pages } from './trPages'
+import { home } from './trHome'
+import { contact } from './trContact'
+import { weekdays } from './trWeekdays'
 
-export const english: Translations = {
-	HOME: 'Home',
-	MENU: 'Menu',
-	LUNCH: 'Lunch',
-	CONTACT: 'Contact',
-
-	COMPANY_NAME: 'Ben Than Ravintola',
-	HOME_DESCRIPTION_BUFFET: '',
-	HOME_DESCRIPTION_VIETNAM: '',
-
-	ERROR: 'Error',
+export const english = {
+	...global,
+	...weekdays,
+	...pages,
+	...home,
+	...contact,
 } as const

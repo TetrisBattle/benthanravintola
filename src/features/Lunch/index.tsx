@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from '@thng/react'
 import { ChiliText } from 'components/ChiliText'
 import { lunch } from './lunch'
+import { useStore } from 'hooks/useStore'
 
 const Section = ({ title, foods }: { title: string; foods: string[] }) => (
 	<Box component='section'>
@@ -18,6 +19,8 @@ const Section = ({ title, foods }: { title: string; foods: string[] }) => (
 )
 
 export const Lunch = () => {
+	const { translator } = useStore()
+
 	return (
 		<Stack
 			id='Lunch'
@@ -28,11 +31,14 @@ export const Lunch = () => {
 				gap: 2,
 			}}
 		>
-			<Section title='Maanantai' foods={lunch.monday} />
-			<Section title='Tiistai' foods={lunch.tuesday} />
-			<Section title='Keskiviikko' foods={lunch.wednesday} />
-			<Section title='Torstai' foods={lunch.thursday} />
-			<Section title='Perjantai' foods={lunch.friday} />
+			<Section title={translator.tr('MONDAY')} foods={lunch.monday} />
+			<Section title={translator.tr('TUESDAY')} foods={lunch.tuesday} />
+			<Section
+				title={translator.tr('WEDNESDAY')}
+				foods={lunch.wednesday}
+			/>
+			<Section title={translator.tr('THURSDAY')} foods={lunch.thursday} />
+			<Section title={translator.tr('FRIDAY')} foods={lunch.friday} />
 		</Stack>
 	)
 }

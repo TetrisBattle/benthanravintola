@@ -30,7 +30,7 @@ export const MobileHeader = ({ routes }: { routes: RouteOption[] }) => {
 					}}
 				>
 					{location.pathname === '/home'
-						? 'Ben Thanh Ravintola'
+						? translator.tr('COMPANY_NAME')
 						: translator.tr(
 								routeTitle(location.pathname as RouteOption)
 							)}
