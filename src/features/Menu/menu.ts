@@ -1,8 +1,8 @@
 export type MenuItem = {
 	id?: number
 	name: string
-	description?: string
 	price: string | { [key: string]: string }
+	description?: string
 }
 
 type Food = {
@@ -373,6 +373,8 @@ export const foods: Food = [
 				id: 65,
 				name: 'Riisispecial **',
 				price: '13.50e',
+				description:
+					'RiisiSpecial härällä, kanalla ja katkaravuilla **',
 			},
 			{
 				id: 66,
@@ -438,6 +440,7 @@ export const foods: Food = [
 				id: 77,
 				name: 'Sea food',
 				price: '17.50e',
+				description: 'Katkarapuja, mustekalaa, simpukoita ja kasviksia',
 			},
 		],
 	},

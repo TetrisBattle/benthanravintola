@@ -6,16 +6,22 @@ import { ChiliText } from 'components/ChiliText'
 const MenuListItem = ({ item }: { item: MenuItem }) => {
 	if (typeof item.price === 'string') {
 		return (
-			<Box
-				component='li'
-				sx={{
-					display: 'flex',
-					justifyContent: 'space-between',
-					gap: 1,
-				}}
-			>
-				<ChiliText item={item} />
-				<Typography>{item.price}</Typography>
+			<Box component='li'>
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						gap: 1,
+					}}
+				>
+					<ChiliText item={item} />
+					<Typography>{item.price}</Typography>
+				</Box>
+				<Typography
+					sx={{ fontSize: (theme) => theme.typography.pxToRem(12) }}
+				>
+					{item.description}
+				</Typography>
 			</Box>
 		)
 	} else if (typeof item.price === 'object') {
@@ -73,7 +79,7 @@ export const MenuList = forwardRef(
 						{subLabel}
 					</Typography>
 				)}
-				<Box component='ul' sx={{ m: 0, p: 0 }}>
+				<Box component='ul' sx={{ m: 0, p: 0, listStyleType: 'none' }}>
 					{items.map((item) => (
 						<MenuListItem key={item.name} item={item} />
 					))}
