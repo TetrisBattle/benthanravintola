@@ -1,9 +1,9 @@
 import { Box, Stack, Typography } from '@thng/react'
 import { forwardRef } from 'react'
 import { MenuItem } from './menu'
-import { ChiliText } from 'components/ChiliText'
-import { Translation } from 'translations'
+import { ChiliText } from 'features/Menu/ChiliText'
 import { useTranslator } from 'hooks/useTranslator'
+import { Translation } from 'translations/Translator'
 
 const MenuListItem = ({ item }: { item: MenuItem }) => {
 	const { tr } = useTranslator()

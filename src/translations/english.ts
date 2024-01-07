@@ -1,4 +1,4 @@
-import { Translations } from 'translations'
+import { Translations } from 'translations/translations'
 
 export const english: Translations = {
 	//#region Global

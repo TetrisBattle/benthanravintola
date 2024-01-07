@@ -1,8 +1,8 @@
 import { Box, Stack, Typography } from '@thng/react'
-import { ChiliText } from 'components/ChiliText'
+import { ChiliText } from 'features/Menu/ChiliText'
 import { lunch } from './lunch'
 import { useTranslator } from 'hooks/useTranslator'
-import { Translation } from 'translations'
+import { Translation } from 'translations/Translator'
 
 const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
 	return (

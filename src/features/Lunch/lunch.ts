@@ -1,4 +1,4 @@
-import { Translation } from 'translations'
+import { Translation } from 'translations/Translator'
 
 type Lunch = {
 	price: string

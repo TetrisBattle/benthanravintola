@@ -1,15 +1,3 @@
-import { english } from './english'
-import { finnish } from './finnish'
-
-export const translations = {
-	'en-US': english,
-	'fi-FI': finnish,
-} as const
-
-export type Locale = keyof typeof translations
-
-export type Translation = keyof Translations
-
 export type Translations = {
 	//#region Global
 	COMPANY_NAME: string

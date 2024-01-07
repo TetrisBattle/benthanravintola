@@ -1,5 +1,16 @@
 import { makeAutoObservable } from 'mobx'
-import { Locale, Translation, translations } from '../translations'
+import { Translations } from './translations'
+import { english } from './english'
+import { finnish } from './finnish'
+
+export const translations = {
+	'en-US': english,
+	'fi-FI': finnish,
+} as const
+
+export type Locale = keyof typeof translations
+
+export type Translation = keyof Translations
 
 export class Translator {
 	locale: Locale = 'fi-FI'

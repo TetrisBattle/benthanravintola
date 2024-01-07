@@ -1,6 +1,6 @@
-import { useStore } from './useStore'
+import { useContext } from 'react'
+import { TranslatorContext } from 'providers/TranslatorProvider'
 
 export const useTranslator = () => {
-	const { translator } = useStore()
-	return translator
+	return useContext(TranslatorContext)
 }

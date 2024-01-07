@@ -1,8 +1,8 @@
 import { Box, Button, Toolbar } from '@thng/react'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { DesktopArrowButton } from './DesktopArrowButton'
-import { Translation } from 'translations'
 import { useTranslator } from 'hooks/useTranslator'
+import { Translation } from 'translations/Translator'
 
 export const MenuToolbar = ({
 	items,

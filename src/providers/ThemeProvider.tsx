@@ -2,12 +2,9 @@ import { ThemeOptions } from '@thng/react'
 import { BaseThemeProvider } from '@thng/react'
 import { useStore } from 'hooks/useStore'
 import { observer } from 'mobx-react-lite'
+import { ProviderProps } from './ProviderProps'
 
-type ThemeProviderProps = {
-	children: React.ReactNode
-}
-
-export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
+export const ThemeProvider = observer(({ children }: ProviderProps) => {
 	const {
 		appStore: { isDarkMode },
 	} = useStore()
@@ -19,7 +16,7 @@ export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
 		palette: isDarkMode
 			? {
 					mode: 'dark',
-			  }
+				}
 			: {
 					mode: 'light',
 					primary: {
@@ -35,7 +32,7 @@ export const ThemeProvider = observer(({ children }: ThemeProviderProps) => {
 					text: {
 						primary: yellow,
 					},
-			  },
+				},
 	}
 
 	return <BaseThemeProvider theme={theme}>{children}</BaseThemeProvider>

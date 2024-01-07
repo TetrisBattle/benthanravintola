@@ -5,7 +5,7 @@ import { Lunch } from 'features/Lunch'
 import { Contact } from 'features/Contact'
 import { NotFound } from 'features/NotFound'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
-import { Translation } from 'translations'
+import { Translation } from 'translations/Translator'
 
 export enum RouteOption {
 	Root = '/',
