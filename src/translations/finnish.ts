@@ -59,12 +59,12 @@ export const finnish: Translations = {
 	TOFU_IN_CHILI_SAUCE: 'Tofu chilikastikkeessa ***',
 	TOFU_IN_SZECHUAN_SAUCE: 'Tofu szechuankastikkeessa **',
 	TOFU_IN_SWEET_SAUCE: 'Tofu hapanimeläkastikkeessa',
-	TOFU_IN_HOT_GARLIC_SAUCE: 'Tofu voimakkaassa valkosipulikastikkeessa **',
+	TOFU_IN_STRONG_GARLIC_SAUCE: 'Tofu voimakkaassa valkosipulikastikkeessa **',
 	VEGETABLES_IN_OYSTER_SAUCE: 'Kasviksia osterikastikkeessa *',
 	VEGETABLES_IN_CHILI_SAUCE: 'Kasviksia chilikastikkeessa ***',
 	VEGETABLES_IN_SWEET_SAUCE: 'Kasviksia hapanimeläkastikkeessa',
 	VEGETABLES_IN_CURRY_SAUCE: 'Kasviksia currykastikkeessa *',
-	VEGETABLES_IN_HOT_GARLIC_SAUCE:
+	VEGETABLES_IN_STRONG_GARLIC_SAUCE:
 		'Kasviksia voimakkaassa valkosipulikastikkeessa **',
 	//#endregion
 
@@ -77,7 +77,7 @@ export const finnish: Translations = {
 	CHICKEN_IN_OYSTER_SAUCE: 'Kanaa osterikastikkeessa *',
 	CHICKEN_IN_SZECHUAN_SAUCE: 'Kanaa szechuankastikkeessa **',
 	CHICKEN_IN_SATAY_SAUCE: 'Kanaa sataykastikkeessa **',
-	CHICKEN_IN_HOT_GARLIC_SAUCE:
+	CHICKEN_IN_STRONG_GARLIC_SAUCE:
 		'Kanaa voimakkaassa valkosipulikastikkeessa **',
 	CHICKEN_BAMBOO_AND_MUSHROOMS: 'Kanaa, bambua ja herkkusieniä',
 	CHICKEN_HOUSE_STYLE: 'Kanaa talon tapaan *',
@@ -92,7 +92,8 @@ export const finnish: Translations = {
 	PORK_IN_OYSTER_SAUCE: 'Possua osterikastikkeessa *',
 	PORK_IN_SZECHUAN_SAUCE: 'Possua szechuankastikkeessa **',
 	PORK_IN_SATAY_SAUCE: 'Possua sataykastikkeessa **',
-	PORK_IN_HOT_GARLIC_SAUCE: 'Possua voimakkaassa valkosipulikastikkeessa **',
+	PORK_IN_STRONG_GARLIC_SAUCE:
+		'Possua voimakkaassa valkosipulikastikkeessa **',
 	PORK_BAMBOO_AND_MUSHROOMS: 'Possua, bambua ja herkkusieniä',
 	PORK_HOUSE_STYLE: 'Possua talon tapaan *',
 	//#endregion
@@ -106,7 +107,8 @@ export const finnish: Translations = {
 	BEEF_IN_OYSTER_SAUCE: 'Härkää osterikastikkeessa *',
 	BEEF_IN_SZECHUAN_SAUCE: 'Härkää szechuankastikkeessa **',
 	BEEF_IN_SATAY_SAUCE: 'Härkää sataykastikkeessa **',
-	BEEF_IN_HOT_GARLIC_SAUCE: 'Härkää voimakkaassa valkosipulikastikkeessa **',
+	BEEF_IN_STRONG_GARLIC_SAUCE:
+		'Härkää voimakkaassa valkosipulikastikkeessa **',
 	BEEF_BAMBOO_AND_MUSHROOMS: 'Härkää, bambua ja herkkusieniä',
 	BEEF_HOUSE_STYLE: 'Härkää talon tapaan *',
 	//#endregion
@@ -131,14 +133,15 @@ export const finnish: Translations = {
 	SHRIMPS: 'Katkarapuja',
 	SHRIMPS_IN_CHILI_SAUCE: 'Katkarapuja chilikastikkeessa ***',
 	SHRIMPS_IN_SZECHUAN_SAUCE: 'Katkarapuja szechuankastikkeessa **',
-	SHRIMPS_IN_HOT_GARLIC_SAUCE:
+	SHRIMPS_IN_STRONG_GARLIC_SAUCE:
 		'Katkarapuja voimakkaassa valkosipulikastikkeessa **',
 	SHRIMPS_IN_CURRY_SAUCE: 'Katkarapuja currykastikkeessa *',
 	SHRIMPS_IN_SWEET_SAUCE: 'Katkarapuja hapanimeläkastikkeessa',
 
 	CRAB_IN_CHILI_SAUCE: 'Rapuja chilikastikkeessa ***',
 	CRAB_IN_SZECHUAN_SAUCE: 'Rapuja szechuankastikkeessa **',
-	CRAB_IN_HOT_GARLIC_SAUCE: 'Rapuja voimakkaassa valkosipulikastikkeessa **',
+	CRAB_IN_STRONG_GARLIC_SAUCE:
+		'Rapuja voimakkaassa valkosipulikastikkeessa **',
 	CRAB_IN_SWEET_SAUCE: 'Rapuja hapanimeläkastikkeessa',
 	CRAB_IN_CURRY_SAUCE: 'Rapuja currykastikkeessa *',
 	//#endregion

@@ -63,7 +63,7 @@ export const foods: Food = [
 			},
 			{
 				id: 9,
-				name: 'TOFU_IN_HOT_GARLIC_SAUCE',
+				name: 'TOFU_IN_STRONG_GARLIC_SAUCE',
 				price: '11.80e',
 			},
 			{
@@ -88,7 +88,7 @@ export const foods: Food = [
 			},
 			{
 				id: 14,
-				name: 'VEGETABLES_IN_HOT_GARLIC_SAUCE',
+				name: 'VEGETABLES_IN_STRONG_GARLIC_SAUCE',
 				price: '11.50e',
 			},
 		],
@@ -133,7 +133,7 @@ export const foods: Food = [
 			},
 			{
 				id: 22,
-				name: 'CHICKEN_IN_HOT_GARLIC_SAUCE',
+				name: 'CHICKEN_IN_STRONG_GARLIC_SAUCE',
 				price: '12.90e',
 			},
 			{
@@ -188,7 +188,7 @@ export const foods: Food = [
 			},
 			{
 				id: 32,
-				name: 'PORK_IN_HOT_GARLIC_SAUCE',
+				name: 'PORK_IN_STRONG_GARLIC_SAUCE',
 				price: '11.90e',
 			},
 			{
@@ -243,7 +243,7 @@ export const foods: Food = [
 			},
 			{
 				id: 42,
-				name: 'BEEF_IN_HOT_GARLIC_SAUCE',
+				name: 'BEEF_IN_STRONG_GARLIC_SAUCE',
 				price: '13.50e',
 			},
 			{
@@ -328,7 +328,7 @@ export const foods: Food = [
 			},
 			{
 				id: 57,
-				name: 'SHRIMPS_IN_HOT_GARLIC_SAUCE',
+				name: 'SHRIMPS_IN_STRONG_GARLIC_SAUCE',
 				price: '14.50e',
 			},
 			{
@@ -353,7 +353,7 @@ export const foods: Food = [
 			},
 			{
 				id: 62,
-				name: 'CRAB_IN_HOT_GARLIC_SAUCE',
+				name: 'CRAB_IN_STRONG_GARLIC_SAUCE',
 				price: '16.50e',
 			},
 			{
