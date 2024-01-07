@@ -1,6 +1,6 @@
 const foodsInSections = {
 	appetizer: {
-		APPETIZER: 'Alkuruoat',
+		APPETIZER: 'Alkuruoka',
 		SHRIMP_ASPARAGUS_SOUP: 'Katkarapuparsakeitto',
 		SHRIMP_MUSHROOM_SOUP: 'Katkarapukeitto ja herkkusieniä',
 		CHICKEN_BAMBOO_SOUP: 'Kana bambukeitto',
@@ -125,7 +125,7 @@ const foodsInSections = {
 		ICE_CREAM_CHOCOLATE_SAUCE: 'Jäätelöä suklaakastikkeella',
 		ICE_CREAM_BALL: 'Jäätelöpallo',
 	},
-}
+} as const
 
 export const foods = {
 	...foodsInSections.appetizer,
@@ -138,4 +138,4 @@ export const foods = {
 	...foodsInSections.riceSpecial,
 	...foodsInSections.houseSpecial,
 	...foodsInSections.dessert,
-}
+} as const

@@ -16,4 +16,4 @@ type TranslationsByLocale = {
 export const translations: TranslationsByLocale = {
 	'en-US': english,
 	'fi-FI': finnish,
-}
+} as const

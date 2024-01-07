@@ -118,7 +118,7 @@ export const foodsInSections = {
 		ICE_CREAM_CHOCOLATE_SAUCE: 'Ice cream with chocolate sauce',
 		ICE_CREAM_BALL: 'Ice cream ball',
 	},
-}
+} as const
 
 export const foods = {
 	...foodsInSections.appetizer,
@@ -131,4 +131,4 @@ export const foods = {
 	...foodsInSections.riceSpecial,
 	...foodsInSections.houseSpecial,
 	...foodsInSections.dessert,
-}
+} as const
