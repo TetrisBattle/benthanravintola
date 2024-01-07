@@ -4,6 +4,8 @@ export const finnish: Translations = {
 	//#region Global
 	COMPANY_NAME: 'Ben Than Ravintola',
 	ERROR: 'Error',
+	PAGE_NOT_FOUND: 'Sivua ei löytynyt!',
+	RETURN_TO_HOME: 'Palaa etusivulle',
 	//#endregion
 
 	//#region Weekdays

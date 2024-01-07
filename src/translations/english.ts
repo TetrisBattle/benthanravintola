@@ -4,6 +4,8 @@ export const english: Translations = {
 	//#region Global
 	COMPANY_NAME: 'Ben Than Ravintola',
 	ERROR: 'Error',
+	PAGE_NOT_FOUND: 'Page not found!',
+	RETURN_TO_HOME: 'Return to home',
 	//#endregion
 
 	//#region Weekdays

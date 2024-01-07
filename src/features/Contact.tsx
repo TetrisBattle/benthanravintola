@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from '@thng/react'
 import maps from 'assets/google_maps.png'
 import { useTranslator } from 'hooks/useTranslator'
+import { observer } from 'mobx-react-lite'
 
 const Section = ({
 	title,
@@ -30,7 +31,7 @@ const Section = ({
 	</Box>
 )
 
-export const Contact = () => {
+export const Contact = observer(() => {
 	const { tr } = useTranslator()
 
 	return (
@@ -83,4 +84,4 @@ export const Contact = () => {
 			/>
 		</Stack>
 	)
-}
+})

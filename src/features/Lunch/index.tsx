@@ -3,12 +3,15 @@ import { ChiliText } from 'features/Menu/ChiliText'
 import { lunch } from './lunch'
 import { useTranslator } from 'hooks/useTranslator'
 import { Translation } from 'translations/Translator'
+import { observer } from 'mobx-react-lite'
 
 const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
 	return (
 		<Box component='section'>
 			<Typography
-				sx={{ fontWeight: (theme) => theme.typography.fontWeightBold }}
+				sx={{
+					fontWeight: (theme) => theme.typography.fontWeightBold,
+				}}
 			>
 				{title}
 			</Typography>
@@ -21,7 +24,7 @@ const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
 	)
 }
 
-export const Lunch = () => {
+export const Lunch = observer(() => {
 	const { tr } = useTranslator()
 
 	return (
@@ -41,4 +44,4 @@ export const Lunch = () => {
 			<Section title={tr('FRIDAY')} foods={lunch.friday} />
 		</Stack>
 	)
-}
+})

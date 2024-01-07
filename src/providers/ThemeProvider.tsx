@@ -27,6 +27,7 @@ export const ThemeProvider = observer(({ children }: ProviderProps) => {
 						main: yellow,
 					},
 					background: {
+						paper: red,
 						default: red,
 					},
 					text: {

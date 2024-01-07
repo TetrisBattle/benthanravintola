@@ -2,8 +2,9 @@ import { Facebook as FacebookIcon } from '@mui/icons-material'
 import { Box } from '@mui/material'
 import { Link, Typography } from '@thng/react'
 import { useTranslator } from 'hooks/useTranslator'
+import { observer } from 'mobx-react-lite'
 
-export const Footer = () => {
+export const Footer = observer(() => {
 	const { tr } = useTranslator()
 
 	return (
@@ -35,4 +36,4 @@ export const Footer = () => {
 			</Link>
 		</Box>
 	)
-}
+})

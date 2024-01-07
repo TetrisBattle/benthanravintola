@@ -2,56 +2,55 @@ import { Box, Button, Toolbar } from '@thng/react'
 import { RouteOption, routeTitle } from 'App/Routes'
 import { useTranslator } from 'hooks/useTranslator'
 import { NavLink } from 'react-router-dom'
+import { LanguageSelector } from './LanguageSelector'
+import { observer } from 'mobx-react-lite'
 
-const HeaderButton = ({ route }: { route: RouteOption }) => {
-	const { tr } = useTranslator()
+export const DesktopHeader = observer(
+	({ routes }: { routes: RouteOption[] }) => {
+		const { tr } = useTranslator()
 
-	return (
-		<Button
-			component={NavLink}
-			to={route}
-			variant='text'
-			sx={(theme) => ({
-				fontSize: (theme) => theme.typography.pxToRem(20),
-				fontWeight: (theme) => theme.typography.fontWeightMedium,
-				color: 'inherit',
-				'&.active': {
-					color: theme.palette.secondary.main,
-				},
-			})}
-		>
-			{tr(routeTitle(route))}
-		</Button>
-	)
-}
-
-export const DesktopHeader = ({ routes }: { routes: RouteOption[] }) => {
-	return (
-		<Toolbar
-			sx={{
-				height: 64,
-				px: 1,
-				display: 'flex',
-			}}
-		>
-			<Box
+		return (
+			<Toolbar
 				sx={{
-					width: 1,
+					height: 64,
+					px: 1,
 					display: 'flex',
-					justifyContent: 'center',
 				}}
 			>
 				<Box
 					sx={{
-						height: 1,
-						pr: 1,
+						width: 1,
+						display: 'flex',
+						justifyContent: 'space-between',
 					}}
 				>
-					{routes.map((route) => (
-						<HeaderButton key={route} route={route} />
-					))}
+					<Box sx={{ ml: 4.25 }} />
+					<Box>
+						{routes.map((route) => (
+							<Button
+								key={route}
+								component={NavLink}
+								to={route}
+								variant='text'
+								sx={(theme) => ({
+									height: 1,
+									fontSize: (theme) =>
+										theme.typography.pxToRem(20),
+									fontWeight: (theme) =>
+										theme.typography.fontWeightMedium,
+									color: 'inherit',
+									'&.active': {
+										color: theme.palette.secondary.main,
+									},
+								})}
+							>
+								{tr(routeTitle(route))}
+							</Button>
+						))}
+					</Box>
+					<LanguageSelector />
 				</Box>
-			</Box>
-		</Toolbar>
-	)
-}
+			</Toolbar>
+		)
+	}
+)

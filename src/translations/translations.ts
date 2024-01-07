@@ -2,6 +2,8 @@ export type Translations = {
 	//#region Global
 	COMPANY_NAME: string
 	ERROR: string
+	PAGE_NOT_FOUND: string
+	RETURN_TO_HOME: string
 	//#endregion
 
 	//#region Weekdays

@@ -1,8 +1,12 @@
 import { Box, Button, Typography } from '@thng/react'
 import { RouteOption } from 'App/Routes'
+import { useTranslator } from 'hooks/useTranslator'
+import { observer } from 'mobx-react-lite'
 import { Link } from 'react-router-dom'
 
-export const NotFound = () => {
+export const NotFound = observer(() => {
+	const { tr } = useTranslator()
+
 	return (
 		<Box
 			id='NotFound'
@@ -14,10 +18,10 @@ export const NotFound = () => {
 				mt: 3,
 			}}
 		>
-			<Typography variant='h1'>Sivua ei löytynyt!</Typography>
+			<Typography variant='h1'>{tr('PAGE_NOT_FOUND')}</Typography>
 			<Button component={Link} to={RouteOption.Home}>
-				Palaa etusivulle
+				{tr('RETURN_TO_HOME')}
 			</Button>
 		</Box>
 	)
-}
+})
