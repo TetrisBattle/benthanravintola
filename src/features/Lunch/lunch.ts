@@ -1,49 +1,61 @@
-export const lunch = {
+import { Translation } from 'translations'
+
+type Lunch = {
+	price: string
+	time: string
+	monday: Translation[]
+	tuesday: Translation[]
+	wednesday: Translation[]
+	thursday: Translation[]
+	friday: Translation[]
+}
+
+export const lunch: Lunch = {
 	price: '12.20e',
 	time: '10:30 - 15:00',
 	monday: [
-		'Kanaa osterikastikkeessa *',
-		'Possua szechuan **',
-		'Härkää ananasta **',
-		'Riisiä ja kanaa',
-		'Riisipastaa, possua ja kanaa',
-		'Lohta chilikastikkeessa ***',
-		'Kasviksia currykastikkeessa *',
+		'MONDAY_CHICKEN',
+		'MONDAY_PORK',
+		'MONDAY_BEEF',
+		'MONDAY_RICE_CHICKEN',
+		'MONDAY_RICE_PORK',
+		'MONDAY_SALMON',
+		'MONDAY_VEGETABLES',
 	],
 	tuesday: [
-		'Kanaa sataykastikkeessa *',
-		'Possua hoisin-kastikkeessa',
-		'Härkää chilikastikkeessa***',
-		'Riisiä vietnamilaiseen tapaan*',
-		'Riisivermiselliä ja härkää',
-		'Lohta hapanimelläkastikkeessa',
-		'Kasviksia voimakas-valkosipuli',
+		'TUESDAY_CHICKEN',
+		'TUESDAY_PORK',
+		'TUESDAY_BEEF',
+		'TUESDAY_RICE',
+		'TUESDAY_RICE_BEEF',
+		'TUESDAY_SALMON',
+		'TUESDAY_VEGETABLES',
 	],
 	wednesday: [
-		'Kanaa szechuan **',
-		'Possua tomaattikastikkeessa *',
-		'Härkää voimakas-valkosipuli **',
-		'Riisiä ja härkää',
-		'Riisipastaa possua ja kanaa',
-		'Lohta currykastikkeessa *',
-		'Kasviksia chilikastikkeessa ***',
+		'WEDNESDAY_CHICKEN',
+		'WEDNESDAY_PORK',
+		'WEDNESDAY_BEEF',
+		'WEDNESDAY_RICE_BEEF',
+		'WEDNESDAY_RICE_PORK',
+		'WEDNESDAY_SALMON',
+		'WEDNESDAY_VEGETABLES',
 	],
 	thursday: [
-		'Kanaa chilikastikkeessa ***',
-		'Possua currykastikkeessa *',
-		'Härkää sataykastikkeessa *',
-		'Riisiä ja possua',
-		'Tofu hoisin-kastikkeessa',
-		'Lohta szechuan **',
-		'Kasviksia osterikastikkeessa *',
+		'THURSDAY_CHICKEN',
+		'THURSDAY_PORK',
+		'THURSDAY_BEEF',
+		'THURSDAY_RICE_PORK',
+		'THURSDAY_TOFU',
+		'THURSDAY_SALMON',
+		'THURSDAY_VEGETABLES',
 	],
 	friday: [
-		'Kanaa voimakas-valkosipuli **',
-		'Possua talon tapaan *',
-		'Härkä szechuan **',
-		'Riisi special **',
-		'Nuudeli, kanaa, kananmuna, ja katkarapuja',
-		'Lohta tomaattikastikkeessa *',
-		'Kasviksia hapanimeläkastikeessa',
+		'FRIDAY_CHICKEN',
+		'FRIDAY_PORK',
+		'FRIDAY_BEEF',
+		'FRIDAY_RICE_SPECIAL',
+		'FRIDAY_NOODLE',
+		'FRIDAY_SALMON',
+		'FRIDAY_VEGETABLES',
 	],
 }

@@ -13,9 +13,9 @@ export const Menu = () => {
 			<MenuToolbar
 				items={[
 					...foods.map((food) => food.label),
-					'Pizza',
-					'Sushi',
-					'Juomat',
+					'PIZZA',
+					'SUSHI',
+					'DRINKS',
 				]}
 				onItemClick={(index) => {
 					const section = sectionRefs.current[index]
@@ -55,7 +55,7 @@ export const Menu = () => {
 						ref={(el) => {
 							sectionRefs.current[foods.length] = el
 						}}
-						label='pizza'
+						label='PIZZA'
 						items={pizza}
 					/>
 					<MenuList
@@ -63,13 +63,13 @@ export const Menu = () => {
 						ref={(el) => {
 							sectionRefs.current[foods.length + 1] = el
 						}}
-						label='Sushi'
-						subLabel='Nigiri'
+						label='SUSHI'
+						subLabel='NIGIRI'
 						items={sushi.nigiri}
 					/>
 					<MenuList
 						key='sushi-maki'
-						subLabel='Maki'
+						subLabel='MAKI'
 						items={sushi.maki}
 					/>
 					<MenuList
@@ -77,23 +77,23 @@ export const Menu = () => {
 						ref={(el) => {
 							sectionRefs.current[foods.length + 2] = el
 						}}
-						label='Juomat'
+						label='DRINKS'
 						items={drinks}
 					/>
 					<MenuList
 						key='redWines'
-						subLabel='Punaviini'
+						subLabel='RED_WINE'
 						items={strongAlcohols.redWines}
 					/>
 					<MenuList
 						key='whiteWines'
-						subLabel='Valkoviini'
+						subLabel='WHITE_WINE'
 						items={strongAlcohols.whiteWines}
 					/>
 					<MenuList
-						key='liquors'
-						subLabel='Väkevät'
-						items={strongAlcohols.liquors}
+						key='alcohols'
+						subLabel='ALCOHOLS'
+						items={strongAlcohols.alcohols}
 					/>
 				</Box>
 			</Box>

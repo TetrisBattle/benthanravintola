@@ -2,8 +2,12 @@ import { Box, Stack, Typography } from '@thng/react'
 import { forwardRef } from 'react'
 import { MenuItem } from './menu'
 import { ChiliText } from 'components/ChiliText'
+import { Translation } from 'translations'
+import { useTranslator } from 'hooks/useTranslator'
 
 const MenuListItem = ({ item }: { item: MenuItem }) => {
+	const { tr } = useTranslator()
+
 	if (typeof item.price === 'string') {
 		return (
 			<Box component='li'>
@@ -14,30 +18,33 @@ const MenuListItem = ({ item }: { item: MenuItem }) => {
 						gap: 1,
 					}}
 				>
-					<ChiliText item={item} />
+					<ChiliText id={item.id} name={item.name} />
 					<Typography>{item.price}</Typography>
 				</Box>
-				<Typography
-					sx={{ fontSize: (theme) => theme.typography.pxToRem(12) }}
-				>
-					{item.description}
-				</Typography>
+				{item.description && (
+					<Typography
+						sx={{
+							fontSize: (theme) => theme.typography.pxToRem(12),
+						}}
+					>
+						{tr(item.description)}
+					</Typography>
+				)}
 			</Box>
 		)
-	} else if (typeof item.price === 'object') {
-		const items = Object.keys(item.price).map((variant) => {
+	} else if (Array.isArray(item.price)) {
+		const priceItems = item.price.map((priceItem) => {
 			return {
-				name: '- ' + variant,
-				price:
-					typeof item.price === 'object' ? item.price[variant] : '',
+				name: priceItem.name,
+				price: priceItem.price,
 			}
 		})
 
 		return (
 			<>
-				<ChiliText item={item} />
-				{items.map((item) => (
-					<MenuListItem key={item.name} item={item} />
+				<ChiliText id={item.id} name={item.name} />
+				{priceItems.map((priceItem) => (
+					<MenuListItem key={priceItem.name} item={priceItem} />
 				))}
 			</>
 		)
@@ -45,8 +52,8 @@ const MenuListItem = ({ item }: { item: MenuItem }) => {
 }
 
 type MenuListProps = {
-	label?: string
-	subLabel?: string
+	label?: Translation
+	subLabel?: Translation
 	items: MenuItem[]
 }
 
@@ -55,18 +62,22 @@ export const MenuList = forwardRef(
 		{ label, subLabel, items }: MenuListProps,
 		ref: React.ForwardedRef<HTMLDivElement>
 	) => {
+		const { tr } = useTranslator()
+
 		return (
 			<Stack component='section' ref={ref} gap={0.5} sx={{ p: 1 }}>
-				<Typography
-					variant='h2'
-					sx={{
-						fontWeight: (theme) =>
-							theme.typography.fontWeightMedium,
-						fontSize: (theme) => theme.typography.pxToRem(24),
-					}}
-				>
-					{label}
-				</Typography>
+				{label && (
+					<Typography
+						variant='h2'
+						sx={{
+							fontWeight: (theme) =>
+								theme.typography.fontWeightMedium,
+							fontSize: (theme) => theme.typography.pxToRem(24),
+						}}
+					>
+						{tr(label)}
+					</Typography>
+				)}
 				{subLabel && (
 					<Typography
 						variant='h3'
@@ -76,7 +87,7 @@ export const MenuList = forwardRef(
 							fontSize: (theme) => theme.typography.pxToRem(20),
 						}}
 					>
-						{subLabel}
+						{tr(subLabel)}
 					</Typography>
 				)}
 				<Box component='ul' sx={{ m: 0, p: 0, listStyleType: 'none' }}>

@@ -91,6 +91,7 @@ export const foodsInSections = {
 		CRAB_IN_CURRY_SAUCE: 'Crab in curry sauce *',
 	},
 	riceSpecial: {
+		RICE: 'Rice special',
 		RICE_SPECIAL: 'Rice special **',
 		RICE_SPECIAL_DESCRIPTION:
 			'Rice special with beef, chicken and shrimps **',
@@ -104,6 +105,7 @@ export const foodsInSections = {
 		RICE_PASTA: 'Rice pasta with beef, chicken, pork and shrimps *',
 	},
 	houseSpecial: {
+		HOUSE_SPECIAL: 'House special',
 		DEEP_FRIED_CHICKEN: 'Deep-fried chicken with our-sweet sauce',
 		DEEP_FRIED_PORK: 'Deep-fried pork with our-sweet sauce',
 		DEEP_FRIED_SHRIMPS: 'Deep-fried shrimps with our-sweet sauce',

@@ -2,10 +2,10 @@ import { Stack, Typography, useTheme } from '@thng/react'
 import { observer } from 'mobx-react-lite'
 import sushiBuffetImg from 'assets/sushi_buffet.jpg'
 import { lunch } from 'features/Lunch/lunch'
-import { useStore } from 'hooks/useStore'
+import { useTranslator } from 'hooks/useTranslator'
 
 export const Home = observer(() => {
-	const { translator } = useStore()
+	const { tr } = useTranslator()
 	const theme = useTheme()
 
 	return (
@@ -26,18 +26,14 @@ export const Home = observer(() => {
 					fontWeight: (theme) => theme.typography.fontWeightMedium,
 				}}
 			>
-				{translator.tr('COMPANY_NAME')}
+				{tr('COMPANY_NAME')}
 			</Typography>
 
 			<Typography>
-				{translator.tr(
-					'HOME_DESCRIPTION_BUFFET',
-					lunch.time,
-					lunch.price
-				)}
+				{tr('HOME_DESCRIPTION_BUFFET', lunch.time, lunch.price)}
 			</Typography>
 
-			<Typography>{translator.tr('HOME_DESCRIPTION_VIETNAM')}</Typography>
+			<Typography>{tr('HOME_DESCRIPTION_VIETNAM')}</Typography>
 
 			<img
 				src={sushiBuffetImg}

@@ -1,10 +1,10 @@
 import { Box, Button, Toolbar } from '@thng/react'
 import { RouteOption, routeTitle } from 'App/Routes'
-import { useStore } from 'hooks/useStore'
+import { useTranslator } from 'hooks/useTranslator'
 import { NavLink } from 'react-router-dom'
 
 const HeaderButton = ({ route }: { route: RouteOption }) => {
-	const { translator } = useStore()
+	const { tr } = useTranslator()
 
 	return (
 		<Button
@@ -20,7 +20,7 @@ const HeaderButton = ({ route }: { route: RouteOption }) => {
 				},
 			})}
 		>
-			{translator.tr(routeTitle(route))}
+			{tr(routeTitle(route))}
 		</Button>
 	)
 }

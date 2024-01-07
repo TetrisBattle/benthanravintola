@@ -2,6 +2,7 @@ import { global } from '../trGlobal'
 import { pages } from './trPages'
 import { home } from './trHome'
 import { menu } from './trMenu'
+import { lunch } from './trLunch'
 import { contact } from './trContact'
 import { weekdays } from './trWeekdays'
 
@@ -11,5 +12,6 @@ export const english = {
 	...pages,
 	...home,
 	...menu,
+	...lunch,
 	...contact,
 } as const

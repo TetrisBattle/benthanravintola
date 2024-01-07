@@ -14,7 +14,6 @@ export const drinks = {
 
 	RED_WINE: 'Red wine',
 	WHITE_WINE: 'White wine',
-	BOTTLE: 'bottle',
 	ROSIERE_SYRAH: 'Rosiere syrah',
 	ROSIERE_SYRAH_DESCRIPTION:
 		'France light, semi-dry, soft, with sweet berries',
@@ -26,4 +25,11 @@ export const drinks = {
 	WHISKEY: 'Whiskey',
 	JACK_DANIELS: "Jack Daniel's (4cl)",
 	KOSKENKORVA: 'Koskenkorva (4cl)',
+
+	L33: '- 0.33l',
+	L50: '- 0.5l',
+	CL_12: '- 12cl',
+	CL_16: '- 16cl',
+	CL_24: '- 24cl',
+	CL_75: '- 75cl / bottle',
 } as const

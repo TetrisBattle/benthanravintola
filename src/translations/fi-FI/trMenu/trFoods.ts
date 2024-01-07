@@ -96,9 +96,10 @@ const foodsInSections = {
 		CRAB_IN_CURRY_SAUCE: 'Rapuja currykastikkeessa *',
 	},
 	riceSpecial: {
-		RICE_SPECIAL: 'RiisiSpecial **',
+		RICE: 'Riisi special',
+		RICE_SPECIAL: 'Riisi special **',
 		RICE_SPECIAL_DESCRIPTION:
-			'RiisiSpecial härällä, kanalla ja katkaravuilla **',
+			'Riisi special härällä, kanalla ja katkaravuilla **',
 		RICE_CHICKEN: 'Riisiä ja kanaa',
 		RICE_BEEF: 'Riisiä ja härkää *',
 		RICE_PORK_SHRIMPS_EGGS: 'Riisiä, possua, katkarapuja ja kananmunaa',
@@ -110,6 +111,7 @@ const foodsInSections = {
 		RICE_PASTA: 'Riisipasta, härkää, kanaa, possua ja katkarapuja *',
 	},
 	houseSpecial: {
+		HOUSE_SPECIAL: 'House special',
 		DEEP_FRIED_CHICKEN: 'Friteerattua kanaa hapanimeläkastikkeessa',
 		DEEP_FRIED_PORK: 'Friteerattua possua hapanimeläkastikkeessa',
 		DEEP_FRIED_SHRIMPS: 'Friteerattuja katkarapuja hapanimeläkastikkeessa',

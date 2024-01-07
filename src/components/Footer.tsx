@@ -1,10 +1,10 @@
 import { Facebook as FacebookIcon } from '@mui/icons-material'
 import { Box } from '@mui/material'
 import { Link, Typography } from '@thng/react'
-import { useStore } from 'hooks/useStore'
+import { useTranslator } from 'hooks/useTranslator'
 
 export const Footer = () => {
-	const { translator } = useStore()
+	const { tr } = useTranslator()
 
 	return (
 		<Box
@@ -21,7 +21,7 @@ export const Footer = () => {
 					`1px solid ${theme.palette.secondary.main}`,
 			}}
 		>
-			<Typography>{translator.tr('COMPANY_NAME')}</Typography>
+			<Typography>{tr('COMPANY_NAME')}</Typography>
 			<Link
 				href='https://www.facebook.com/p/Vietnamilainen-Ben-Thanh-Ravintola-100054518168044/'
 				target='_blank'

@@ -1,17 +1,16 @@
-import { Box, PartialKey, Typography } from '@thng/react'
+import { Box, Typography } from '@thng/react'
 import chili from 'assets/chili.png'
 import { MenuItem } from 'features/Menu/menu'
+import { useTranslator } from 'hooks/useTranslator'
 import { Fragment } from 'react'
 
-type ChiliTextProps = {
-	item: PartialKey<MenuItem, 'price'>
-}
-
-export const ChiliText = ({ item }: ChiliTextProps) => {
-	const chiliAmount = item.name.split('*').length - 1
+export const ChiliText = ({ id, name }: Omit<MenuItem, 'price'>) => {
+	const { tr } = useTranslator()
+	let translatedName = tr(name)
+	const chiliAmount = name.split('*').length - 1
 	const chiliImg = <img src={chili} alt='Chili' width={16} height={16} />
 	const chiliImgs = [...Array(chiliAmount)].map(() => chiliImg)
-	const name = item.name.replace(/\*/g, '')
+	translatedName = translatedName.replace(/\*/g, '')
 
 	return (
 		<Box
@@ -21,8 +20,8 @@ export const ChiliText = ({ item }: ChiliTextProps) => {
 				alignItems: 'center',
 			}}
 		>
-			{item.id && <Typography>{item.id}.&nbsp;</Typography>}
-			<Typography sx={{ mr: 0.5 }}>{name}</Typography>
+			{id && <Typography>{id}.&nbsp;</Typography>}
+			<Typography sx={{ mr: 0.5 }}>{translatedName}</Typography>
 			{chiliImgs.map((img, index) => (
 				<Fragment key={index}>{img}</Fragment>
 			))}

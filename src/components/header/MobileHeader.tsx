@@ -1,12 +1,12 @@
 import { Menu as MenuIcon } from '@mui/icons-material'
 import { Drawer, IconButton, MenuItem, Toolbar, Typography } from '@thng/react'
 import { RouteOption, routeTitle } from 'App/Routes'
-import { useStore } from 'hooks/useStore'
+import { useTranslator } from 'hooks/useTranslator'
 import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 export const MobileHeader = ({ routes }: { routes: RouteOption[] }) => {
-	const { translator } = useStore()
+	const { tr } = useTranslator()
 	const location = useLocation()
 	const [open, setOpen] = useState(false)
 	const toggleOpen = () => setOpen((prev) => !prev)
@@ -30,10 +30,8 @@ export const MobileHeader = ({ routes }: { routes: RouteOption[] }) => {
 					}}
 				>
 					{location.pathname === '/home'
-						? translator.tr('COMPANY_NAME')
-						: translator.tr(
-								routeTitle(location.pathname as RouteOption)
-							)}
+						? tr('COMPANY_NAME')
+						: tr(routeTitle(location.pathname as RouteOption))}
 				</Typography>
 				<IconButton onClick={toggleOpen} sx={{ color: 'inherit' }}>
 					<MenuIcon />
@@ -63,7 +61,7 @@ export const MobileHeader = ({ routes }: { routes: RouteOption[] }) => {
 							}),
 						}}
 					>
-						{translator.tr(routeTitle(route))}
+						{tr(routeTitle(route))}
 					</MenuItem>
 				))}
 			</Drawer>

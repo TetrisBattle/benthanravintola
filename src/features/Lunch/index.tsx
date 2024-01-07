@@ -1,25 +1,28 @@
 import { Box, Stack, Typography } from '@thng/react'
 import { ChiliText } from 'components/ChiliText'
 import { lunch } from './lunch'
-import { useStore } from 'hooks/useStore'
+import { useTranslator } from 'hooks/useTranslator'
+import { Translation } from 'translations'
 
-const Section = ({ title, foods }: { title: string; foods: string[] }) => (
-	<Box component='section'>
-		<Typography
-			sx={{ fontWeight: (theme) => theme.typography.fontWeightBold }}
-		>
-			{title}
-		</Typography>
-		<Stack>
-			{foods.map((food) => {
-				return <ChiliText key={food} item={{ name: food }} />
-			})}
-		</Stack>
-	</Box>
-)
+const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
+	return (
+		<Box component='section'>
+			<Typography
+				sx={{ fontWeight: (theme) => theme.typography.fontWeightBold }}
+			>
+				{title}
+			</Typography>
+			<Stack>
+				{foods.map((food) => {
+					return <ChiliText key={food} name={food} />
+				})}
+			</Stack>
+		</Box>
+	)
+}
 
 export const Lunch = () => {
-	const { translator } = useStore()
+	const { tr } = useTranslator()
 
 	return (
 		<Stack
@@ -31,14 +34,11 @@ export const Lunch = () => {
 				gap: 2,
 			}}
 		>
-			<Section title={translator.tr('MONDAY')} foods={lunch.monday} />
-			<Section title={translator.tr('TUESDAY')} foods={lunch.tuesday} />
-			<Section
-				title={translator.tr('WEDNESDAY')}
-				foods={lunch.wednesday}
-			/>
-			<Section title={translator.tr('THURSDAY')} foods={lunch.thursday} />
-			<Section title={translator.tr('FRIDAY')} foods={lunch.friday} />
+			<Section title={tr('MONDAY')} foods={lunch.monday} />
+			<Section title={tr('TUESDAY')} foods={lunch.tuesday} />
+			<Section title={tr('WEDNESDAY')} foods={lunch.wednesday} />
+			<Section title={tr('THURSDAY')} foods={lunch.thursday} />
+			<Section title={tr('FRIDAY')} foods={lunch.friday} />
 		</Stack>
 	)
 }

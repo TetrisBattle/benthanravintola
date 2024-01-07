@@ -1,470 +1,471 @@
+import { Translation } from 'translations'
+
 export type MenuItem = {
 	id?: number
-	name: string
-	price: string | { [key: string]: string }
-	description?: string
+	name: Translation
+	price: string | MenuItem[]
+	description?: Translation
 }
 
 type Food = {
-	label: string
+	label: Translation
 	items: MenuItem[]
 }[]
 
 export const foods: Food = [
 	{
-		label: 'Alkuruoka',
+		label: 'APPETIZER',
 		items: [
 			{
 				id: 1,
-				name: 'Katkarapuparsakeitto',
+				name: 'SHRIMP_ASPARAGUS_SOUP',
 				price: '4.50e',
 			},
 			{
 				id: 2,
-				name: 'Katkarapukeitto ja herkkusieniä',
+				name: 'SHRIMP_MUSHROOM_SOUP',
 				price: '4.50e',
 			},
 			{
 				id: 3,
-				name: 'Kana bambukeitto',
+				name: 'CHICKEN_BAMBOO_SOUP',
 				price: '4.50e',
 			},
 			{
 				id: 4,
-				name: 'Kevätkääryle ja salaattia (kpl)',
+				name: 'SPRING_ROLLS_AND_SALAD',
 				price: '2.50e',
 			},
 			{
 				id: 5,
-				name: 'Peking keitto / Katkarapuja ja kasviksia',
+				name: 'BEIJING_SOUP',
 				price: '4.50e',
 			},
 		],
 	},
 	{
-		label: 'Kasviksia',
+		label: 'VEGETABLES',
 		items: [
 			{
 				id: 6,
-				name: 'Tofu chilikastikkeessa ***',
+				name: 'TOFU_IN_CHILI_SAUCE',
 				price: '11.80e',
 			},
 			{
 				id: 7,
-				name: 'Tofu szechuankastikkeessa **',
+				name: 'TOFU_IN_SZECHUAN_SAUCE',
 				price: '11.80e',
 			},
 			{
 				id: 8,
-				name: 'Tofu hapanimeläkastikkeessa',
+				name: 'TOFU_IN_SWEET_SAUCE',
 				price: '11.80e',
 			},
 			{
 				id: 9,
-				name: 'Tofu voimakkaassa valkosipulikastikkeessa **',
+				name: 'TOFU_IN_HOT_GARLIC_SAUCE',
 				price: '11.80e',
 			},
 			{
 				id: 10,
-				name: 'Kasviksia osterikastikkeessa *',
+				name: 'VEGETABLES_IN_OYSTER_SAUCE',
 				price: '11.50e',
 			},
 			{
 				id: 11,
-				name: 'Kasviksia chilikastikkeessa ***',
+				name: 'VEGETABLES_IN_CHILI_SAUCE',
 				price: '11.50e',
 			},
 			{
 				id: 12,
-				name: 'Kasviksia hapanimeläkastikkeessa',
+				name: 'VEGETABLES_IN_SWEET_SAUCE',
 				price: '11.50e',
 			},
 			{
 				id: 13,
-				name: 'Kasviksia currykastikkeessa *',
+				name: 'VEGETABLES_IN_CURRY_SAUCE',
 				price: '11.50e',
 			},
 			{
 				id: 14,
-				name: 'Kasviksia voimakkaassa valkosipulikastikkeessa **',
+				name: 'VEGETABLES_IN_HOT_GARLIC_SAUCE',
 				price: '11.50e',
 			},
 		],
 	},
 	{
-		label: 'Kanaa',
+		label: 'CHICKEN',
 		items: [
 			{
 				id: 15,
-				name: 'Kanaa currykastikkeessa *',
+				name: 'CHICKEN_IN_CURRY_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 16,
-				name: 'Kanaa chilikastikkeessa ***',
+				name: 'CHICKEN_IN_CHILI_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 17,
-				name: 'Kanaa hapanimeläkastikkeessa',
+				name: 'CHICKEN_IN_SWEET_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 18,
-				name: 'Kanaa tomaattikastikkeessa *',
+				name: 'CHICKEN_IN_TOMATO_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 19,
-				name: 'Kanaa osterikastikkeessa *',
+				name: 'CHICKEN_IN_OYSTER_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 20,
-				name: 'Kanaa szechuankastikkeessa **',
+				name: 'CHICKEN_IN_SZECHUAN_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 21,
-				name: 'Kanaa sataykastikkeessa *',
+				name: 'CHICKEN_IN_SATAY_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 22,
-				name: 'Kanaa voimakkaassa valkosipulikastikkeessa ** ',
+				name: 'CHICKEN_IN_HOT_GARLIC_SAUCE',
 				price: '12.90e',
 			},
 			{
 				id: 23,
-				name: 'Kanaa, bambua ja herkkusieniä',
+				name: 'CHICKEN_BAMBOO_AND_MUSHROOMS',
 				price: '12.90e',
 			},
 			{
 				id: 24,
-				name: 'Kanaa talon tapaan *',
+				name: 'CHICKEN_HOUSE_STYLE',
 				price: '12.90e',
 			},
 		],
 	},
 	{
-		label: 'Possua',
+		label: 'PORK',
 		items: [
 			{
 				id: 25,
-				name: 'Possua currykastikkeessa *',
+				name: 'PORK_IN_CURRY_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 26,
-				name: 'Possua chilikastikkeessa ***',
+				name: 'PORK_IN_CHILI_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 27,
-				name: 'Possua hapanimeläkastikkeessa',
+				name: 'PORK_IN_SWEET_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 28,
-				name: 'Possua tomaattikastikkeessa *',
+				name: 'PORK_IN_TOMATO_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 29,
-				name: 'Possua osterikastikkeessa *',
+				name: 'PORK_IN_OYSTER_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 30,
-				name: 'Possua szechuankastikkeessa **',
+				name: 'PORK_IN_SZECHUAN_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 31,
-				name: 'Possua sataykastikkeessa *',
+				name: 'PORK_IN_SATAY_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 32,
-				name: 'Possua voimakkaassa valkosipulikastikkeessa **',
+				name: 'PORK_IN_HOT_GARLIC_SAUCE',
 				price: '11.90e',
 			},
 			{
 				id: 33,
-				name: 'Possua, bambua ja herkkusieniä',
+				name: 'PORK_BAMBOO_AND_MUSHROOMS',
 				price: '11.90e',
 			},
 			{
 				id: 34,
-				name: 'Possua talon tapaan *',
+				name: 'PORK_HOUSE_STYLE',
 				price: '11.90e',
 			},
 		],
 	},
 	{
-		label: 'Härkää',
+		label: 'BEEF',
 		items: [
 			{
 				id: 35,
-				name: 'Härkää currykastikkeessa *',
+				name: 'BEEF_IN_CURRY_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 36,
-				name: 'Härkää chilikastikkeessa ***',
+				name: 'BEEF_IN_CHILI_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 37,
-				name: 'Härkää hapanimeläkastikkeessa',
+				name: 'BEEF_IN_SWEET_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 38,
-				name: 'Härkää tomaattikastikkeessa *',
+				name: 'BEEF_IN_TOMATO_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 39,
-				name: 'Härkää osterikastikkeessa *',
+				name: 'BEEF_IN_OYSTER_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 40,
-				name: 'Härkää szechuankastikkeessa **',
+				name: 'BEEF_IN_SZECHUAN_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 41,
-				name: 'Härkää sataykastikkeessa **',
+				name: 'BEEF_IN_SATAY_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 42,
-				name: 'Härkää voimakkaassa valkosipulikastikkeessa **',
+				name: 'BEEF_IN_HOT_GARLIC_SAUCE',
 				price: '13.50e',
 			},
 			{
 				id: 43,
-				name: 'Härkää, bambua ja herkkusieniä',
+				name: 'BEEF_BAMBOO_AND_MUSHROOMS',
 				price: '13.50e',
 			},
 			{
 				id: 44,
-				name: 'Härkää talon tapaan *',
+				name: 'BEEF_HOUSE_STYLE',
 				price: '13.50e',
 			},
 		],
 	},
 	{
-		label: 'Kalaa',
+		label: 'FISH',
 		items: [
 			{
 				id: 45,
-				name: 'Mustekalaa chilikastikkeessa ***',
+				name: 'SQUID_IN_CHILI_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 46,
-				name: 'Mustekalaa tomaattikastikkeessa *',
+				name: 'SQUID_IN_TOMATO_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 47,
-				name: 'Mustekalaa szechuankastikkeessa **',
+				name: 'SQUID_IN_SZECHUAN_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 48,
-				name: 'Mustekalaa hapanimeläkastikkeessa',
+				name: 'SQUID_IN_SWEET_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 49,
-				name: 'Mustekalaa currykastikkeessa *',
+				name: 'SQUID_IN_CURRY_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 50,
-				name: 'Kuhafilettä chilikastikkeessa ***',
+				name: 'PIKE_PERCH_FILLET_IN_CHILI_SAUCE',
 				price: '15.50e',
 			},
 			{
 				id: 51,
-				name: 'Kuhafilettä tomaattikastikkeessa *',
+				name: 'PIKE_PERCH_FILLET_IN_TOMATO_SAUCE',
 				price: '15.50e',
 			},
 			{
 				id: 52,
-				name: 'Kuhafilettä szechuankastikkeessa **',
+				name: 'PIKE_PERCH_FILLET_IN_SZECHUAN_SAUCE',
 				price: '15.50e',
 			},
 			{
 				id: 53,
-				name: 'Lohta hapanimeläkastikkeessa',
+				name: 'SALMON_IN_SWEET_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 54,
-				name: 'Lohta currykastikkeessa *',
+				name: 'SALMON_IN_CURRY_SAUCE',
 				price: '14.50e',
 			},
 		],
 	},
 	{
-		label: 'Katkarapuja',
+		label: 'SHRIMPS',
 		items: [
 			{
 				id: 55,
-				name: 'Katkarapuja chilikastikkeessa ***',
+				name: 'SHRIMPS_IN_CHILI_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 56,
-				name: 'Katkarapuja szechuankastikkeessa **',
+				name: 'SHRIMPS_IN_SZECHUAN_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 57,
-				name: 'Katkarapuja voimakkaassa valkosipulikastikkeessa **',
+				name: 'SHRIMPS_IN_HOT_GARLIC_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 58,
-				name: 'Katkarapuja currykastikkeessa *',
+				name: 'SHRIMPS_IN_CURRY_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 59,
-				name: 'Katkarapuja hapanimeläkastikkeessa',
+				name: 'SHRIMPS_IN_SWEET_SAUCE',
 				price: '14.50e',
 			},
 			{
 				id: 60,
-				name: 'Rapuja chilikastikkeessa ***',
+				name: 'CRAB_IN_CHILI_SAUCE',
 				price: '16.50e',
 			},
 			{
 				id: 61,
-				name: 'Rapuja szechuankastikkeessa **',
+				name: 'CRAB_IN_SZECHUAN_SAUCE',
 				price: '16.50e',
 			},
 			{
 				id: 62,
-				name: 'Rapuja voimakkaassa valkosipulikastikkeessa **',
+				name: 'CRAB_IN_HOT_GARLIC_SAUCE',
 				price: '16.50e',
 			},
 			{
 				id: 63,
-				name: 'Rapuja hapanimeläkastikkeessa',
+				name: 'CRAB_IN_SWEET_SAUCE',
 				price: '16.50e',
 			},
 			{
 				id: 64,
-				name: 'Rapuja currykastikkeessa *',
+				name: 'CRAB_IN_CURRY_SAUCE',
 				price: '16.50e',
 			},
 		],
 	},
 	{
-		label: 'Riisi special',
+		label: 'RICE',
 		items: [
 			{
 				id: 65,
-				name: 'Riisispecial **',
+				name: 'RICE_SPECIAL',
 				price: '13.50e',
-				description:
-					'RiisiSpecial härällä, kanalla ja katkaravuilla **',
+				description: 'RICE_SPECIAL_DESCRIPTION',
 			},
 			{
 				id: 66,
-				name: 'Riisiä ja kanaa',
+				name: 'RICE_CHICKEN',
 				price: '11.90e',
 			},
 			{
 				id: 67,
-				name: 'Riisiä ja härkää *',
+				name: 'RICE_BEEF',
 				price: '12.50e',
 			},
 			{
 				id: 68,
-				name: 'Riisiä, possua, katkarapuja ja kananmunaa',
+				name: 'RICE_PORK_SHRIMPS_EGGS',
 				price: '12.90e',
 			},
 			{
 				id: 69,
-				name: 'Nuudelia, härkää, kanaa, possua ja katkarapuja *',
+				name: 'NOODLES_BEEF_CHICKEN_PORK_SHRIMPS',
 				price: '13.50e',
 			},
 			{
 				id: 70,
-				name: 'Nuudelia, kanaa, katkarapuja ja kananmunaa',
+				name: 'NOODLES_CHICKEN_SHRIMPS_EGGS',
 				price: '13.50e',
 			},
 			{
 				id: 71,
-				name: 'Riisivermiselliä, härkää, kanaa ja possua *',
+				name: 'VERMICELLI',
 				price: '13.50e',
 			},
 			{
 				id: 72,
-				name: 'Riisipastaa, härkää, kanaa, possua ja katkarapuja *',
+				name: 'RICE_PASTA',
 				price: '13.50e',
 			},
 		],
 	},
 	{
-		label: 'House special',
+		label: 'HOUSE_SPECIAL',
 		items: [
 			{
 				id: 73,
-				name: 'Friteerattua kanaa hapanimeläkastikeessa',
+				name: 'DEEP_FRIED_CHICKEN',
 				price: '14.50e',
 			},
 			{
 				id: 74,
-				name: 'Friteerattua possua hapanimeläkastikeessa',
+				name: 'DEEP_FRIED_PORK',
 				price: '14.50e',
 			},
 			{
 				id: 75,
-				name: 'Friteerattua katkarapuja hapanimeläkastikeessa',
+				name: 'DEEP_FRIED_SHRIMPS',
 				price: '15.50e',
 			},
 			{
 				id: 76,
-				name: 'Peking ankka hoisinkastikkeessa',
+				name: 'BEIJING_DUCK',
 				price: '17.50e',
 			},
 			{
 				id: 77,
-				name: 'Sea food',
+				name: 'SEA_FOOD',
 				price: '17.50e',
-				description: 'Katkarapuja, mustekalaa, simpukoita ja kasviksia',
+				description: 'SEA_FOOD_DESCRIPTION',
 			},
 		],
 	},
 	{
-		label: 'Jälkiruoka',
+		label: 'DESSERT',
 		items: [
 			{
 				id: 78,
-				name: 'Paahdettua banaania ja jäätelö',
+				name: 'ICE_CREAM_FRIED_BANANA',
 				price: '6.00e',
 			},
 			{
 				id: 79,
-				name: 'Paahdettua ananasta ja jäätelö',
+				name: 'ICE_CREAM_PINEAPPLE',
 				price: '6.00e',
 			},
 			{
 				id: 80,
-				name: 'Jäätelö ja suklaakastiketta',
+				name: 'ICE_CREAM_CHOCOLATE_SAUCE',
 				price: '6.00e',
 			},
 			{
 				id: 81,
-				name: 'Jäätelöpallo',
+				name: 'ICE_CREAM_BALL',
 				price: '3.00e',
 			},
 		],
@@ -474,104 +475,104 @@ export const foods: Food = [
 export const pizza: MenuItem[] = [
 	{
 		id: 1,
-		name: 'Jauheliha pizza',
-		description: 'Jauhelija',
+		name: 'MINCED_MEAT_PIZZA',
+		description: 'MINCED_MEAT_PIZZA_DESCRIPTION',
 		price: '6.80e',
 	},
 	{
 		id: 2,
-		name: 'Calzone',
-		description: 'Kinkku, jauhelija',
+		name: 'CALZONE',
+		description: 'CALZONE_DESCRIPTION',
 		price: '7.20e',
 	},
 	{
 		id: 3,
-		name: 'Alcapone',
-		description: 'Kinkku, ananas, paprika',
+		name: 'ALCAPONE',
+		description: 'ALCAPONE_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 4,
-		name: 'Caruzo',
-		description: 'Kinkku, herkkusieni, katkarapu',
+		name: 'CARUZO',
+		description: 'CARUZO_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 5,
-		name: 'Napoli',
-		description: 'Kinkku, salami, herne',
+		name: 'NAPOLI',
+		description: 'NAPOLI_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 6,
-		name: 'Venezia',
-		description: 'Salami, tonnikala, kananmuna',
+		name: 'VENEZIA',
+		description: 'VENEZIA_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 7,
-		name: 'Tropicana',
-		description: 'Kinkku, ananas, aurajuusto',
+		name: 'TROPICANA',
+		description: 'TROPICANA_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 8,
-		name: 'Hawai',
-		description: 'Kinkku, tonnikala, katkarapu',
+		name: 'HAWAI',
+		description: 'HAWAI_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 9,
-		name: 'Pekonipizza',
-		description: 'Pekoni, pepperonimakkara, sipuli',
+		name: 'BACON_PIZZA',
+		description: 'BACON_PIZZA_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 10,
-		name: 'Jenkki',
-		description: 'Salami, pekoni, sipuli',
+		name: 'AMERICAN',
+		description: 'AMERICAN_DESCRIPTION',
 		price: '7.70e',
 	},
 	{
 		id: 11,
-		name: 'San zirnione',
-		description: 'Kinkku, paprika, sipuli, katkarapu',
+		name: 'SAN_ZIRNIONE',
+		description: 'SAN_ZIRNIONE_DESCRIPTION',
 		price: '8.50e',
 	},
 	{
 		id: 12,
-		name: 'Mexicano',
-		description: 'Pepperoni, jalapeno, ananas',
+		name: 'MEXICANO',
+		description: 'MEXICANO_DESCRIPTION',
 		price: '7.00e',
 	},
 	{
 		id: 13,
-		name: 'Vegetariana',
-		description: 'Herkkusieni, paprika, aurajuusto',
+		name: 'VEGETARIANA',
+		description: 'VEGETARIANA_DESCRIPTION',
 		price: '7.00e',
 	},
 	{
 		id: 14,
-		name: 'Kebab pizza',
-		description: 'Kebab, chilikastike, pepperoni, jalapeno',
+		name: 'KEBAB_PIZZA',
+		description: 'KEBAB_PIZZA_DESCRIPTION',
 		price: '8.90e',
 	},
 	{
 		id: 15,
-		name: 'Istanbul',
-		description: 'Kebab, pepperoni, sipuli, majoneesi',
+		name: 'ISTANBUL',
+		description: 'ISTANBUL_DESCRIPTION',
 		price: '8.90e',
 	},
 	{
 		id: 16,
-		name: 'Kebab special',
-		description: 'Kebab, jauheliha, pepperoni, tuore-tomaatti',
+		name: 'KEBAB_SPECIAL',
+		description: 'KEBAB_SPECIAL_DESCRIPTION',
 		price: '8.90e',
 	},
 	{
 		id: 17,
-		name: 'Fantasia',
-		description: 'Neljä täytettä makusi mukaan',
+		name: 'FANTASIA',
+		description: 'FANTASIA_DESCRIPTION',
 		price: '9.20e',
 	},
 ]
@@ -585,164 +586,181 @@ export const sushi: Sushi = {
 	nigiri: [
 		{
 			id: 1,
-			name: 'Lohi nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_SALMON',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 2,
-			name: 'Grillattu lohi nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_GRILLED_SALMON',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 3,
-			name: 'Katkarapu nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_SHRIMP',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 4,
-			name: 'Surimi nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_SURIMI',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 5,
-			name: 'Surimi majoneesi nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_SURIMI_MAYO',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 6,
-			name: 'Kananmuna nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_EGG',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 7,
-			name: 'Tofu nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_TOFU',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 8,
-			name: 'Avokado nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_AVOCADO',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 		{
 			id: 9,
-			name: 'Kirjolohen mäti nigiri',
-			description: '10 kpl',
+			name: 'NIGIRI_RAINBOW_TROUT',
+			description: 'PIECES_10',
 			price: '8.00e',
 		},
 	],
 	maki: [
 		{
 			id: 10,
-			name: 'Lohi maki',
+			name: 'MAKI_SALMON',
 			price: '8.00e',
 		},
 		{
 			id: 11,
-			name: 'Kurkku maki',
+			name: 'MAKI_CUCUMBER',
 			price: '8.00e',
 		},
 		{
 			id: 12,
-			name: 'Acokado maki',
+			name: 'MAKI_AVOCADO',
 			price: '8.00e',
 		},
 		{
 			id: 13,
-			name: 'Grillattu lohi maki',
+			name: 'MAKI_GRILLED_SALMON',
 			price: '8.00e',
 		},
 		{
 			id: 14,
-			name: 'California maki',
+			name: 'MAKI_CALIFORNIA',
 			price: '8.00e',
-			description: 'surimi, avokado, kurkku, majoneesi',
+			description: 'MAKI_CALIFORNIA_DESCRIPTION',
 		},
 		{
 			id: 15,
-			name: 'Philadelfia maki',
+			name: 'MAKI_PHILADELFIA',
 			price: '8.00e',
-			description: 'lohi, avokado, kurkku, majoneesi',
+			description: 'MAKI_PHILADELFIA_DESCRIPTION',
 		},
 		{
 			id: 16,
-			name: 'Dragon roll',
+			name: 'DRAGON_ROLL',
 			price: '8.00e',
-			description: 'pahdettuja katkarapuja, kurkku, philadeljuusto',
+			description: 'DRAGON_ROLL_DESCRIPTION',
 		},
 		{
 			id: 17,
-			name: 'Kasvis-california maki',
+			name: 'MAKI_VEGE_CALIFORNIA',
 			price: '8.00e',
-			description:
-				'avokado, kurkku, paprika, grillattu sipuli, majoneesi',
+			description: 'MAKI_VEGE_CALIFORNIA_DESCRIPTION',
 		},
 	],
 }
 
 export const drinks: MenuItem[] = [
 	{
-		name: 'Vesi',
+		name: 'DRINKS',
 		price: '0.90e',
 	},
 	{
-		name: 'Maito',
-		price: {
-			'0.33l': '2.70e',
-			'0.5l': '3.50e',
-		},
+		name: 'WATER',
+		price: [
+			{
+				name: 'L33',
+				price: '2.70e',
+			},
+			{
+				name: 'L50',
+				price: '3.50e',
+			},
+		],
 	},
 	{
-		name: 'Tuoremehu',
-		price: {
-			'0.33l': '2.70e',
-			'0.5l': '3.50e',
-		},
+		name: 'MILK',
+		price: [
+			{
+				name: 'L33',
+				price: '2.70e',
+			},
+			{
+				name: 'L50',
+				price: '3.50e',
+			},
+		],
 	},
 	{
-		name: 'Virvoitusjuoma',
-		price: {
-			'0.33l': '2.70e',
-			'0.5l': '3.50e',
-		},
+		name: 'LEMONADE',
+		price: [
+			{
+				name: 'L33',
+				price: '2.70e',
+			},
+			{
+				name: 'L50',
+				price: '3.50e',
+			},
+		],
 	},
 	{
-		name: 'Lapinkulta olut IV',
+		name: 'LAPINKULTA',
 		price: '5.60e',
 	},
 	{
-		name: 'Tsingtao olut III',
+		name: 'TSINGTAO',
 		price: '5.60e',
 	},
 	{
-		name: 'Lonkero',
+		name: 'CIDER',
 		price: '5.60e',
 	},
 	{
-		name: 'Omenasiideri',
+		name: 'APPLE_CIDER',
 		price: '5.60e',
 	},
 	{
-		name: 'Päärynäsiideri',
+		name: 'PEAR_CIDER',
 		price: '5.60e',
 	},
 	{
-		name: 'Kahvi',
+		name: 'COFFEE',
 		price: '2.20e',
 	},
 	{
-		name: 'Tee',
+		name: 'TEA',
 		price: '2.20e',
 	},
 	{
-		name: 'Teekannu',
+		name: 'TEAPOT',
 		price: '5.00e',
 	},
 ]
@@ -750,62 +768,92 @@ export const drinks: MenuItem[] = [
 type strongAlcohols = {
 	redWines: MenuItem[]
 	whiteWines: MenuItem[]
-	liquors: MenuItem[]
+	alcohols: MenuItem[]
 }
 
 export const strongAlcohols: strongAlcohols = {
 	redWines: [
 		{
-			name: 'Rosiere syrah',
-			description: 'Ranska kevyt, puolikuiva, pehmeä, makean marjaisa',
-			price: {
-				'12cl': '6.90e',
-				'16cl': '8.10e',
-				'24cl': '10.50e',
-				'75cl / pullo': '27.00e',
-			},
+			name: 'ROSIERE_SYRAH',
+			description: 'ROSIERE_SYRAH_DESCRIPTION',
+			price: [
+				{
+					name: 'CL_12',
+					price: '6.90e',
+				},
+				{
+					name: 'CL_16',
+					price: '8.10e',
+				},
+				{
+					name: 'CL_24',
+					price: '10.50e',
+				},
+				{
+					name: 'CL_75',
+					price: '27.00e',
+				},
+			],
 		},
 		{
-			name: "Jacob's creek",
-			price: {
-				'12cl': '6.90e',
-				'16cl': '8.10e',
-				'24cl': '10.50e',
-				'75cl / pullo': '27.00e',
-			},
+			name: 'JACOBS_CREEK',
+			price: [
+				{
+					name: 'CL_12',
+					price: '6.90e',
+				},
+				{
+					name: 'CL_16',
+					price: '8.10e',
+				},
+				{
+					name: 'CL_24',
+					price: '10.50e',
+				},
+				{
+					name: 'CL_75',
+					price: '27.00e',
+				},
+			],
 		},
 	],
 	whiteWines: [
 		{
-			name: "Jacob's creek",
-			price: {
-				'12cl': '6.90e',
-				'16cl': '8.10e',
-				'24cl': '10.50e',
-				'75cl / pullo': '27.00e',
-			},
+			name: 'JACOBS_CREEK',
+			price: [
+				{
+					name: 'CL_12',
+					price: '6.90e',
+				},
+				{
+					name: 'CL_16',
+					price: '8.10e',
+				},
+				{
+					name: 'CL_24',
+					price: '10.50e',
+				},
+				{
+					name: 'CL_75',
+					price: '27.00e',
+				},
+			],
 		},
 	],
-	liquors: [
+	alcohols: [
 		{
-			name: 'Monopol v.s.o.p. (4cl)',
-			description: 'Cognac',
+			name: 'COGNAC',
+			description: 'MONOPOL',
 			price: '7.50e',
 		},
 		{
-			name: "Jack Daniel's (4cl)",
-			description: 'Whiskey',
+			name: 'WHISKEY',
+			description: 'JACK_DANIELS',
 			price: '7.50e',
 		},
 		{
-			name: 'Koskenkorva (4cl)',
+			name: 'KOSKENKORVA',
 			price: '7.50e',
 		},
 	],
 }
-
-// export const additionalInfo = {
-// 	1: '* Melko voimakkaasti maustettua',
-// 	2: '** Voimakkaasti maustettua',
-// 	3: '*** Tajun vievästi maustettua',
-// }

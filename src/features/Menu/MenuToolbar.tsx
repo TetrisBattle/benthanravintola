@@ -1,14 +1,17 @@
 import { Box, Button, Toolbar } from '@thng/react'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { DesktopArrowButton } from './DesktopArrowButton'
+import { Translation } from 'translations'
+import { useTranslator } from 'hooks/useTranslator'
 
 export const MenuToolbar = ({
 	items,
 	onItemClick,
 }: {
-	items: string[]
+	items: Translation[]
 	onItemClick: (index: number) => void
 }) => {
+	const { tr } = useTranslator()
 	const [selectedItem, setSelectedItem] = useState(0)
 	const toolbarRef = useRef<HTMLDivElement>(null)
 	const buttonRefs = useRef<HTMLButtonElement[] | null[]>([])
@@ -104,7 +107,7 @@ export const MenuToolbar = ({
 								},
 							]}
 						>
-							{item}
+							{tr(item)}
 						</Button>
 					)
 				})}

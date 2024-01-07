@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@thng/react'
 import maps from 'assets/google_maps.png'
-import { useStore } from 'hooks/useStore'
+import { useTranslator } from 'hooks/useTranslator'
 
 const Section = ({
 	title,
@@ -31,7 +31,7 @@ const Section = ({
 )
 
 export const Contact = () => {
-	const { translator } = useStore()
+	const { tr } = useTranslator()
 
 	return (
 		<Stack
@@ -42,7 +42,7 @@ export const Contact = () => {
 				alignItems: 'center',
 			}}
 		>
-			<Section title={translator.tr('OPENING_TIMES')}>
+			<Section title={tr('OPENING_TIMES')}>
 				<Box
 					sx={{
 						display: 'flex',
@@ -50,28 +50,28 @@ export const Contact = () => {
 					}}
 				>
 					<Box>
-						<Typography>{translator.tr('MON_FRI')}</Typography>
-						<Typography>{translator.tr('SAT')}</Typography>
-						<Typography>{translator.tr('SUN')}</Typography>
+						<Typography>{tr('MON_FRI')}</Typography>
+						<Typography>{tr('SAT')}</Typography>
+						<Typography>{tr('SUN')}</Typography>
 					</Box>
 
 					<Box>
 						<Typography>10:30 - 18:00</Typography>
 						<Typography>12:00 - 18:00</Typography>
-						<Typography>{translator.tr('CLOSED')}</Typography>
+						<Typography>{tr('CLOSED')}</Typography>
 					</Box>
 				</Box>
 			</Section>
 
-			<Section title={translator.tr('PHONE_NUMBER')}>
+			<Section title={tr('PHONE_NUMBER')}>
 				<Typography>016257750</Typography>
 			</Section>
 
-			<Section title={translator.tr('EMAIL')}>
+			<Section title={tr('EMAIL')}>
 				<Typography>benthanravintola@gmail.com</Typography>
 			</Section>
 
-			<Section title={translator.tr('ADDRESS')}>
+			<Section title={tr('ADDRESS')}>
 				<Typography>Valtakatu 5</Typography>
 				<Typography>94100 Kemi</Typography>
 			</Section>
