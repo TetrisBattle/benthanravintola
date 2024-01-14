@@ -1,3 +1,3 @@
-# client-app
+# Ben Than Ravintola
 
-Default structure for react apps
+The website is hosted at [benthanravintola.vercel.app](https://benthanravintola.vercel.app/)
