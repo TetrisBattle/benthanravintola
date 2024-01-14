@@ -7,7 +7,16 @@ import { observer } from 'mobx-react-lite'
 
 const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
 	return (
-		<Grid item component='section' sx={{ width: 400, alignSelf: 'center' }}>
+		<Grid
+			item
+			component='section'
+			sx={(theme) => ({
+				[theme.breakpoints.up('sm')]: {
+					width: 400,
+					alignSelf: 'center',
+				},
+			})}
+		>
 			<Typography
 				sx={{
 					fontWeight: (theme) => theme.typography.fontWeightBold,
