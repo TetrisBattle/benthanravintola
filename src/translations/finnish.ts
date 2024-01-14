@@ -33,7 +33,7 @@ export const finnish: Translations = {
 	HOME_DESCRIPTION_BUFFET: `
 		Ben Than Ravintola toivottaa sinut tervetulleeksi
 		vietnamilaiseen ravintolaan. Tarjoilemme herkullista
-		buffet-lounasta joka päivä arkisin klo {0}. Buffetin
+		buffet-lounasta joka arkipäivä klo {0}. Buffetin
 		hinta on {1}. Buffettimme sisältää vietnamilaisien
 		ruokien lisäksi pitzaa ja sushia. Lounaalla voit nauttia
 		runsaista annoksista kaikkia suosikkiruokiasi.`,

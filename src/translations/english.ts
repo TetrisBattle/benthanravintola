@@ -30,8 +30,17 @@ export const english: Translations = {
 	//#endregion
 
 	//#region Home
-	HOME_DESCRIPTION_BUFFET: '',
-	HOME_DESCRIPTION_VIETNAM: '',
+	HOME_DESCRIPTION_BUFFET: `
+		Ben Than Restaurant welcomes you
+		to a vietnamese restaurant. We serve delicious
+		buffet lunch every weekday at {0}. Buffet
+		price is {1}. On top of vietnamese dishes our buffet
+		includes pizza and sushi. At lunch you can enjoy
+		all your favourite dishes from a generous selection.`,
+	HOME_DESCRIPTION_VIETNAM: `
+		Vietnamese food is full of flavour, colour and freshness.
+		Our restaurant has a warm and welcoming atmosphere. This is
+		perfect way to experience the South Asian atmosphere.`,
 	//#endregion
 
 	//#region Menu
