@@ -211,7 +211,6 @@ export type Translations = {
 	NIGIRI_TOFU: string
 	NIGIRI_AVOCADO: string
 	NIGIRI_RAINBOW_TROUT: string
-	PIECES_10: string
 
 	MAKI: string
 	MAKI_SALMON: string

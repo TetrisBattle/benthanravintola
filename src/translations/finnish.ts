@@ -220,7 +220,7 @@ export const finnish: Translations = {
 
 	//#region Sushi
 	SUSHI: 'Sushi',
-	NIGIRI: 'Nigiri',
+	NIGIRI: 'Nigiri (10 kpl)',
 	NIGIRI_SALMON: 'Lohi nigiri',
 	NIGIRI_GRILLED_SALMON: 'Grillattu lohi nigiri',
 	NIGIRI_SHRIMP: 'Katkarapu nigiri',
@@ -230,7 +230,6 @@ export const finnish: Translations = {
 	NIGIRI_TOFU: 'Tofu nigiri',
 	NIGIRI_AVOCADO: 'Avokado nigiri',
 	NIGIRI_RAINBOW_TROUT: 'Kirjolohen mäti nigiri',
-	PIECES_10: '10 kpl',
 
 	MAKI: 'Maki rullat',
 	MAKI_SALMON: 'Lohi maki',

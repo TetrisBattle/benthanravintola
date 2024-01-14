@@ -214,7 +214,7 @@ export const english: Translations = {
 
 	//#region Sushi
 	SUSHI: 'Sushi',
-	NIGIRI: 'Nigiri',
+	NIGIRI: 'Nigiri (10 pcs)',
 	NIGIRI_SALMON: 'Salmon nigiri',
 	NIGIRI_GRILLED_SALMON: 'Grilled salmon nigiri',
 	NIGIRI_SHRIMP: 'Shrimp nigiri',
@@ -224,7 +224,6 @@ export const english: Translations = {
 	NIGIRI_TOFU: 'Tofu nigiri',
 	NIGIRI_AVOCADO: 'Avocado nigiri',
 	NIGIRI_RAINBOW_TROUT: 'Rainbow trout nigiri',
-	PIECES_10: '10 pcs',
 
 	MAKI: 'Maki rolls',
 	MAKI_SALMON: 'Salmon maki',
