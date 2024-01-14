@@ -39,9 +39,7 @@ export const MobileHeader = observer(
 								theme.typography.fontWeightRegular,
 						}}
 					>
-						{location.pathname === '/home'
-							? tr('COMPANY_NAME')
-							: tr(routeTitle(location.pathname as RouteOption))}
+						{tr(routeTitle(location.pathname as RouteOption))}
 					</Typography>
 					<Box>
 						<LanguageSelector />
