@@ -37,45 +37,51 @@ export const Contact = observer(() => {
 	return (
 		<Stack
 			id='Contact'
-			sx={{
+			sx={(theme) => ({
 				p: 2,
-				gap: 3,
+				rowGap: 2,
 				alignItems: 'center',
-			}}
+				[theme.breakpoints.up('md')]: {
+					flexDirection: 'row',
+					justifyContent: 'space-evenly',
+				},
+			})}
 		>
-			<Section title={tr('OPENING_TIMES')}>
-				<Box
-					sx={{
-						display: 'flex',
-						gap: 1,
-					}}
-				>
-					<Box>
-						<Typography>{tr('MON_FRI')}</Typography>
-						<Typography>{tr('SAT')}</Typography>
-						<Typography>{tr('SUN')}</Typography>
+			<Stack sx={{ gap: 2 }}>
+				<Section title={tr('OPENING_TIMES')}>
+					<Box
+						sx={{
+							display: 'flex',
+							gap: 1,
+						}}
+					>
+						<Box>
+							<Typography>{tr('MON_FRI')}</Typography>
+							<Typography>{tr('SAT')}</Typography>
+							<Typography>{tr('SUN')}</Typography>
+						</Box>
+
+						<Box>
+							<Typography>10:30 - 18:00</Typography>
+							<Typography>12:00 - 18:00</Typography>
+							<Typography>{tr('CLOSED')}</Typography>
+						</Box>
 					</Box>
+				</Section>
 
-					<Box>
-						<Typography>10:30 - 18:00</Typography>
-						<Typography>12:00 - 18:00</Typography>
-						<Typography>{tr('CLOSED')}</Typography>
-					</Box>
-				</Box>
-			</Section>
+				<Section title={tr('PHONE_NUMBER')}>
+					<Typography>016257750</Typography>
+				</Section>
 
-			<Section title={tr('PHONE_NUMBER')}>
-				<Typography>016257750</Typography>
-			</Section>
+				<Section title={tr('EMAIL')}>
+					<Typography>benthanravintola@gmail.com</Typography>
+				</Section>
 
-			<Section title={tr('EMAIL')}>
-				<Typography>benthanravintola@gmail.com</Typography>
-			</Section>
-
-			<Section title={tr('ADDRESS')}>
-				<Typography>Valtakatu 5</Typography>
-				<Typography>94100 Kemi</Typography>
-			</Section>
+				<Section title={tr('ADDRESS')}>
+					<Typography>Valtakatu 5</Typography>
+					<Typography>94100 Kemi</Typography>
+				</Section>
+			</Stack>
 
 			<img
 				src={maps}

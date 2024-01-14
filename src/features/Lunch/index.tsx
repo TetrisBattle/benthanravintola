@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@thng/react'
+import { Grid, Stack, Typography } from '@thng/react'
 import { ChiliText } from 'features/Menu/ChiliText'
 import { lunch } from './lunch'
 import { useTranslator } from 'hooks/useTranslator'
@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite'
 
 const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
 	return (
-		<Box component='section'>
+		<Grid item component='section' sx={{ width: 400, alignSelf: 'center' }}>
 			<Typography
 				sx={{
 					fontWeight: (theme) => theme.typography.fontWeightBold,
@@ -20,7 +20,7 @@ const Section = ({ title, foods }: { title: string; foods: Translation[] }) => {
 					return <ChiliText key={food} name={food} />
 				})}
 			</Stack>
-		</Box>
+		</Grid>
 	)
 }
 
@@ -28,20 +28,28 @@ export const Lunch = observer(() => {
 	const { tr } = useTranslator()
 
 	return (
-		<Stack
+		<Grid
+			container
 			id='Lunch'
 			sx={{
-				maxWidth: (theme) => theme.breakpoints.values.sm,
 				p: 2,
 				mx: 'auto',
-				gap: 2,
+				rowGap: 2,
+				'> .MuiGrid-container': {
+					rowGap: 2,
+					flexDirection: 'column',
+				},
 			}}
 		>
-			<Section title={tr('MONDAY')} foods={lunch.monday} />
-			<Section title={tr('TUESDAY')} foods={lunch.tuesday} />
-			<Section title={tr('WEDNESDAY')} foods={lunch.wednesday} />
-			<Section title={tr('THURSDAY')} foods={lunch.thursday} />
-			<Section title={tr('FRIDAY')} foods={lunch.friday} />
-		</Stack>
+			<Grid item container xs={12} md={6}>
+				<Section title={tr('MONDAY')} foods={lunch.monday} />
+				<Section title={tr('TUESDAY')} foods={lunch.tuesday} />
+				<Section title={tr('WEDNESDAY')} foods={lunch.wednesday} />
+			</Grid>
+			<Grid item container xs={12} md={6}>
+				<Section title={tr('THURSDAY')} foods={lunch.thursday} />
+				<Section title={tr('FRIDAY')} foods={lunch.friday} />
+			</Grid>
+		</Grid>
 	)
 })
