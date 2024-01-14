@@ -4,11 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"eslintConfig": {
-		"extends": [
-			"eslint:recommended",
-			"plugin:thng/typescript",
-			"plugin:thng/prettier"
-		]
+		"extends": "plugin:thng/recommendedReact"
 	},
 	"scripts": {
 		"dev": "vite",
