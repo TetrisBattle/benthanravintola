@@ -8,10 +8,13 @@ import { Fragment } from 'react'
 export const ChiliText = observer(({ id, name }: Omit<MenuItem, 'price'>) => {
 	const { tr } = useTranslator()
 	let translatedName = tr(name)
-	const chiliAmount = name.split('*').length - 1
+
+	const chiliAmount = translatedName.split('*').length - 1
 	const chiliImg = <img src={chili} alt='Chili' width={16} height={16} />
 	const chiliImgs = [...Array(chiliAmount)].map(() => chiliImg)
-	translatedName = translatedName.replace(/\*/g, '')
+
+	translatedName = tr(name).replace(/\*/g, '')
+	const text = id ? `${id}. ${translatedName}` : translatedName
 
 	return (
 		<Box
@@ -21,11 +24,12 @@ export const ChiliText = observer(({ id, name }: Omit<MenuItem, 'price'>) => {
 				alignItems: 'center',
 			}}
 		>
-			{id && <Typography>{id}.&nbsp;</Typography>}
-			<Typography sx={{ mr: 0.5 }}>{translatedName}</Typography>
-			{chiliImgs.map((img, index) => (
-				<Fragment key={index}>{img}</Fragment>
-			))}
+			<Typography sx={{ mr: 0.5 }}>{text}</Typography>
+			<Box>
+				{chiliImgs.map((img, index) => (
+					<Fragment key={index}>{img}</Fragment>
+				))}
+			</Box>
 		</Box>
 	)
 })
