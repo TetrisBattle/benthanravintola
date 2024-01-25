@@ -7,7 +7,7 @@ import {
 	Toolbar,
 	Typography,
 } from '@thng/react'
-import { RouteOption, routeTitle } from 'app/Routes'
+import { RouteOption, routeTitle } from 'Routes'
 import { useTranslator } from 'hooks/useTranslator'
 import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'

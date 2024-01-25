@@ -1,10 +1,9 @@
 import { AppBar, useMediaQuery, useTheme } from '@thng/react'
-import { RouteOption } from 'app/Routes'
+import { RouteOption } from 'Routes'
 import { MobileHeader } from './MobileHeader'
 import { DesktopHeader } from './DesktopHeader'
-import { observer } from 'mobx-react-lite'
 
-export const Header = observer(() => {
+export const Header = () => {
 	const theme = useTheme()
 
 	const headerRoutes = [
@@ -35,4 +34,4 @@ export const Header = observer(() => {
 			</AppBar>
 		</>
 	)
-})
+}

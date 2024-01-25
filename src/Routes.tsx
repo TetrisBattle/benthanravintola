@@ -1,4 +1,4 @@
-import { Root } from 'app/Root'
+import { Root } from 'App'
 import { Home } from 'features/Home'
 import { Menu } from 'features/menu/Menu'
 import { Lunch } from 'features/lunch/Lunch'

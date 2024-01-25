@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@thng/react'
-import { RouteOption } from 'app/Routes'
+import { RouteOption } from 'Routes'
 import { useTranslator } from 'hooks/useTranslator'
 import { observer } from 'mobx-react-lite'
 import { Link } from 'react-router-dom'
