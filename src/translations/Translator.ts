@@ -18,9 +18,7 @@ export class Translator {
 	constructor() {
 		makeAutoObservable(this)
 
-		const locale: Locale | null = localStorage.getItem(
-			'locale'
-		) as Locale | null
+		const locale = localStorage.getItem('locale') as Locale | null
 		if (locale) this.setLocale(locale)
 	}
 
