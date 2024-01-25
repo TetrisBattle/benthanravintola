@@ -1,8 +1,8 @@
 import { Box, Typography } from '@thng/react'
-import { MenuItem } from './menu'
 import { ChiliText } from 'features/menu/ChiliText'
 import { useTranslator } from 'hooks/useTranslator'
 import { observer } from 'mobx-react-lite'
+import { MenuItem } from './menuData'
 
 export const MenuListItem = observer(({ item }: { item: MenuItem }) => {
 	const { tr } = useTranslator()

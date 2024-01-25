@@ -1,9 +1,9 @@
 import { Box, Typography } from '@thng/react'
 import chili from 'assets/chili.png'
-import { MenuItem } from 'features/menu/menu'
 import { useTranslator } from 'hooks/useTranslator'
 import { observer } from 'mobx-react-lite'
 import { Fragment } from 'react'
+import { MenuItem } from './menuData'
 
 export const ChiliText = observer(({ id, name }: Omit<MenuItem, 'price'>) => {
 	const { tr } = useTranslator()

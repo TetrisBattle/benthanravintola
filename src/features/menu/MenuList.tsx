@@ -1,10 +1,10 @@
 import { Box, Stack, Typography } from '@thng/react'
 import { forwardRef } from 'react'
-import { MenuItem } from './menu'
 import { useTranslator } from 'hooks/useTranslator'
 import { Translation } from 'translations/Translator'
 import { observer } from 'mobx-react-lite'
 import { MenuListItem } from './MenuListItem'
+import { MenuItem } from './menuData'
 
 type MenuListProps = {
 	label?: Translation
