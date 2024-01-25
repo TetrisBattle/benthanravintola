@@ -2,7 +2,7 @@ import { Box } from '@thng/react'
 import { useRef } from 'react'
 import { MenuList } from './MenuList'
 import { MenuToolbar } from './MenuToolbar'
-import { foods, pizza, sushi, drinks, strongAlcohols } from './menu'
+import { foods, pizza, sushi, drinks, strongAlcohols } from './menuData'
 
 export const Menu = () => {
 	const containerRef = useRef<HTMLDivElement>(null)

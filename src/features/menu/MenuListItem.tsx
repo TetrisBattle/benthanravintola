@@ -1,6 +1,6 @@
 import { Box, Typography } from '@thng/react'
 import { MenuItem } from './menu'
-import { ChiliText } from 'features/Menu/ChiliText'
+import { ChiliText } from 'features/menu/ChiliText'
 import { useTranslator } from 'hooks/useTranslator'
 import { observer } from 'mobx-react-lite'
 

@@ -1,7 +1,7 @@
 import { Stack, Typography, useTheme } from '@thng/react'
 import { observer } from 'mobx-react-lite'
 import sushiBuffetImg from 'assets/sushi_buffet.jpg'
-import { lunch } from 'features/Lunch/lunch'
+import { lunch } from 'features/lunch/lunchData'
 import { useTranslator } from 'hooks/useTranslator'
 
 export const Home = observer(() => {

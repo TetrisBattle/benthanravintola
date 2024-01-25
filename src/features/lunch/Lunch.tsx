@@ -1,6 +1,6 @@
 import { Grid, Stack, Typography } from '@thng/react'
-import { ChiliText } from 'features/Menu/ChiliText'
-import { lunch } from './lunch'
+import { ChiliText } from 'features/menu/ChiliText'
+import { lunch } from './lunchData'
 import { useTranslator } from 'hooks/useTranslator'
 import { Translation } from 'translations/Translator'
 import { observer } from 'mobx-react-lite'

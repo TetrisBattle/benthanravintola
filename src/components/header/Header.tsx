@@ -1,5 +1,5 @@
 import { AppBar, useMediaQuery, useTheme } from '@thng/react'
-import { RouteOption } from 'App/Routes'
+import { RouteOption } from 'app/Routes'
 import { MobileHeader } from './MobileHeader'
 import { DesktopHeader } from './DesktopHeader'
 import { observer } from 'mobx-react-lite'

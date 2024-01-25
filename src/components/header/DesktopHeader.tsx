@@ -1,5 +1,5 @@
 import { Box, Button, Toolbar } from '@thng/react'
-import { RouteOption, routeTitle } from 'App/Routes'
+import { RouteOption, routeTitle } from 'app/Routes'
 import { useTranslator } from 'hooks/useTranslator'
 import { NavLink } from 'react-router-dom'
 import { LanguageSelector } from './LanguageSelector'
