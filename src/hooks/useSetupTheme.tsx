@@ -7,10 +7,11 @@ export const useSetupTheme = () => {
 	const yellow = '#EBD265'
 
 	useEffect(() => {
-		themeStore.setIsDarkMode(false)
+		themeStore.setPaletteMode('light')
 
-		themeStore.setLightThemeOptions({
+		themeStore.addThemeOptions({
 			palette: {
+				mode: 'light',
 				primary: {
 					main: red,
 					contrastText: yellow,
