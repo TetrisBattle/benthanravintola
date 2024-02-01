@@ -1,4 +1,4 @@
-import { Root } from 'App'
+import { App } from 'App'
 import { Home } from 'features/Home'
 import { Menu } from 'features/menu/Menu'
 import { Lunch } from 'features/lunch/Lunch'
@@ -19,7 +19,7 @@ export enum RouteOption {
 export const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Root />,
+		element: <App />,
 		children: [
 			{ path: RouteOption.NotFound, element: <NotFound /> },
 			{

@@ -4,7 +4,7 @@ import { Header } from 'features/header/Header'
 import { useSetupTheme } from 'hooks/useSetupTheme'
 import { Outlet } from 'react-router-dom'
 
-export const Root = () => {
+export const App = () => {
 	useSetupTheme()
 
 	return (
