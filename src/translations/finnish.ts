@@ -2,7 +2,7 @@ import { Translations } from 'translations/translations'
 
 export const finnish: Translations = {
 	//#region Global
-	COMPANY_NAME: 'Ben Than Ravintola',
+	COMPANY_NAME: 'Ben Thanh Ravintola',
 	ERROR: 'Error',
 	PAGE_NOT_FOUND: 'Sivua ei löytynyt!',
 	RETURN_TO_HOME: 'Palaa etusivulle',
@@ -31,7 +31,7 @@ export const finnish: Translations = {
 
 	//#region Home
 	HOME_DESCRIPTION_BUFFET: `
-		Ben Than Ravintola toivottaa sinut tervetulleeksi
+		Ben Thanh Ravintola toivottaa sinut tervetulleeksi
 		vietnamilaiseen ravintolaan. Tarjoilemme herkullista
 		buffet-lounasta joka arkipäivä klo {0}. Buffetin
 		hinta on {1}. Buffettimme sisältää vietnamilaisien

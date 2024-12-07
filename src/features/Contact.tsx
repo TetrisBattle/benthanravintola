@@ -74,7 +74,7 @@ export const Contact = observer(() => {
 				</Section>
 
 				<Section title={tr('EMAIL')}>
-					<Typography>benthanravintola@gmail.com</Typography>
+					<Typography>benthanhravintola@gmail.com</Typography>
 				</Section>
 
 				<Section title={tr('ADDRESS')}>

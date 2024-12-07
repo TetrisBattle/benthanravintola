@@ -1,3 +1,3 @@
-# Ben Than Ravintola
+# Ben Thanh Ravintola
 
-The website is hosted at [benthanravintola.vercel.app](https://benthanravintola.vercel.app/)
+The website is hosted at [benthanhravintola.vercel.app](https://benthanhravintola.vercel.app/)

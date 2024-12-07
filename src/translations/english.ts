@@ -2,7 +2,7 @@ import { Translations } from 'translations/translations'
 
 export const english: Translations = {
 	//#region Global
-	COMPANY_NAME: 'Ben Than Ravintola',
+	COMPANY_NAME: 'Ben Thanh Ravintola',
 	ERROR: 'Error',
 	PAGE_NOT_FOUND: 'Page not found!',
 	RETURN_TO_HOME: 'Return to home',
@@ -31,7 +31,7 @@ export const english: Translations = {
 
 	//#region Home
 	HOME_DESCRIPTION_BUFFET: `
-		Ben Than Restaurant welcomes you
+		Ben Thanh Restaurant welcomes you
 		to a vietnamese restaurant. We serve delicious
 		buffet lunch every weekday at {0}. Buffet
 		price is {1}. On top of vietnamese dishes our buffet
